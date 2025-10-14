@@ -1,0 +1,63 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Wait for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+        id: waitForVercelPreview
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            ${{ steps.waitForVercelPreview.outputs.url }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          
+      - name: Check Lighthouse Score
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: ${{ steps.waitForVercelPreview.outputs.url }}
+          device: 'all'
+          minAccessibilityScore: 90
+          minBestPracticesScore: 90
+          minPerformanceScore: 90
+          minSeoScore: 90
+
+      - name: Comment PR with Results
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const comment = `## 🔍 Lighthouse CI Results
+            
+            Preview URL: ${{ steps.waitForVercelPreview.outputs.url }}
+            
+            Please check the Lighthouse report above for detailed performance metrics.
+            
+            **Required Scores:**
+            - ✅ Performance: ≥ 90
+            - ✅ Accessibility: ≥ 90
+            - ✅ Best Practices: ≥ 90
+            - ✅ SEO: ≥ 90
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+

@@ -1,0 +1,7 @@
+# CODEOWNERS
+* @E1 @E2 @E3 @E4 @E5
+/public/images/* @E5
+/index.html @E2 @E3
+/style.css @E2
+/main.js @E2 @E3 @E4
+/docs/* @E1
