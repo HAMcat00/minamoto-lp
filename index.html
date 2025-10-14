@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-ga-id="{{GA_MEASUREMENT_ID}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,14 +41,18 @@
 
   <!-- Google Analytics 4 (E3: Data & Tracking) -->
   <script>
-    window.GA4_MEASUREMENT_ID = '{{GA_MEASUREMENT_ID}}';
+    // GA4測定IDをdata-ga-id属性から取得
+    window.GA4_MEASUREMENT_ID = document.documentElement.dataset.gaId || '{{GA_MEASUREMENT_ID}}';
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id={{GA_MEASUREMENT_ID}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{GA_MEASUREMENT_ID}}', {
+    
+    // data-ga-id属性から測定IDを取得してgtag設定
+    const gaId = document.documentElement.dataset.gaId || '{{GA_MEASUREMENT_ID}}';
+    gtag('config', gaId, {
       'send_page_view': true,
       'cookie_flags': 'SameSite=None;Secure'
     });
@@ -59,6 +63,50 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD構造化データ (E3: Data & Tracking) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "源 -MINAMOTO-",
+    "image": "https://minamoto.example.com/public/images/ogp.jpg",
+    "@id": "https://minamoto.example.com/",
+    "url": "https://minamoto.example.com/",
+    "telephone": "+81-49-XXX-XXXX",
+    "priceRange": "¥",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "鶴ヶ島市内",
+      "addressLocality": "鶴ヶ島市",
+      "addressRegion": "埼玉県",
+      "postalCode": "350-XXXX",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.9342,
+      "longitude": 139.3917
+    },
+    "servesCuisine": "Japanese",
+    "acceptsReservations": "False",
+    "menu": "https://minamoto.example.com/#menu",
+    "description": "鶴ヶ島の現場男子へ。サクサクジューシーな黄金色の唐揚げ弁当を《ワンコイン500円・送料無料》でお届け。LINEで簡単注文、最短30分配達。",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "89"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "完全無欠の唐揚げ弁当",
+      "price": "500",
+      "priceCurrency": "JPY",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01"
+    }
+  }
+  </script>
 </head>
 <body>
   

@@ -53,17 +53,21 @@ let html = fs.readFileSync(indexPath, 'utf8');
 
 // プレースホルダーの置換
 const placeholders = [
-  '{{GA_MEASUREMENT_ID}}',
-  '__GA4_MEASUREMENT_ID__'
+  { pattern: '{{GA_MEASUREMENT_ID}}', name: '{{GA_MEASUREMENT_ID}}' },
+  { pattern: '__GA4_MEASUREMENT_ID__', name: '__GA4_MEASUREMENT_ID__' }
 ];
 
-placeholders.forEach(placeholder => {
-  const count = (html.match(new RegExp(placeholder, 'g')) || []).length;
-  html = html.replace(new RegExp(placeholder, 'g'), GA_MEASUREMENT_ID);
+let totalReplacements = 0;
+placeholders.forEach(({ pattern, name }) => {
+  const count = (html.match(new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
+  html = html.replace(new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), GA_MEASUREMENT_ID);
   if (count > 0) {
-    console.log(`✅ Replaced ${count} occurrence(s) of "${placeholder}"`);
+    console.log(`✅ Replaced ${count} occurrence(s) of "${name}"`);
+    totalReplacements += count;
   }
 });
+
+console.log(`✅ Total: ${totalReplacements} placeholder(s) replaced with GA4 ID`);
 
 // 置換確認
 if (html.includes('{{GA_MEASUREMENT_ID}}') || html.includes('__GA4_MEASUREMENT_ID__')) {

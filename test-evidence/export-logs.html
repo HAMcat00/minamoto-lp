@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トラッキングログエクスポート - AZVELIA</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .info-box {
+      background: #f3f4f6;
+      border-left: 4px solid #667eea;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .info-box h3 {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #e5e7eb;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .log-preview {
+      background: #1f2937;
+      color: #f3f4f6;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 24px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      min-width: 150px;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-outline {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+
+    .btn-outline:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .message {
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      display: none;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #10b981;
+    }
+
+    .message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 トラッキングログエクスポート</h1>
+    <p class="subtitle">AZVELIA LP - E4 Integration</p>
+
+    <div class="info-box">
+      <h3>💡 使い方</h3>
+      <p>
+        このページは実機テストで記録されたトラッキングログをエクスポートするためのツールです。<br>
+        「ログを表示」ボタンでログを確認し、「JSON形式でダウンロード」または「CSV形式でダウンロード」でファイルを保存してください。
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value" id="logCount">0</div>
+        <div class="stat-label">ログ件数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="eventCount">0</div>
+        <div class="stat-label">イベント種類</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="ctaClickCount">0</div>
+        <div class="stat-label">CTA クリック</div>
+      </div>
+    </div>
+
+    <div class="log-preview" id="logPreview">ログがありません。「ログを表示」ボタンをクリックしてください。</div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="displayLogs()">📋 ログを表示</button>
+      <button class="btn-secondary" onclick="downloadJSON()">💾 JSON形式でダウンロード</button>
+      <button class="btn-secondary" onclick="downloadCSV()">📊 CSV形式でダウンロード</button>
+      <button class="btn-outline" onclick="copyToClipboard()">📋 クリップボードにコピー</button>
+      <button class="btn-danger" onclick="clearLogs()">🗑️ ログをクリア</button>
+    </div>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    let logs = [];
+
+    function loadLogs() {
+      const logsString = localStorage.getItem('azvelia_tracking_logs');
+      logs = logsString ? JSON.parse(logsString) : [];
+      return logs;
+    }
+
+    function displayLogs() {
+      logs = loadLogs();
+      const preview = document.getElementById('logPreview');
+      const logCount = document.getElementById('logCount');
+      const eventCount = document.getElementById('eventCount');
+      const ctaClickCount = document.getElementById('ctaClickCount');
+
+      if (logs.length === 0) {
+        preview.textContent = 'ログがありません。';
+        showMessage('ログが見つかりませんでした。', 'error');
+        return;
+      }
+
+      // 統計情報更新
+      logCount.textContent = logs.length;
+      const uniqueEvents = new Set(logs.map(log => log.event));
+      eventCount.textContent = uniqueEvents.size;
+      const ctaClicks = logs.filter(log => log.event === 'line_cta_click');
+      ctaClickCount.textContent = ctaClicks.length;
+
+      // ログプレビュー表示
+      preview.textContent = JSON.stringify(logs, null, 2);
+      showMessage(`${logs.length}件のログを読み込みました。`, 'success');
+    }
+
+    function downloadJSON() {
+      logs = loadLogs();
+      if (logs.length === 0) {
+        showMessage('ダウンロードするログがありません。', 'error');
+        return;
+      }
+
+      const dataStr = JSON.stringify(logs, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `azvelia_tracking_logs_${Date.now()}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showMessage('JSONファイルをダウンロードしました。', 'success');
+    }
+
+    function downloadCSV() {
+      logs = loadLogs();
+      if (logs.length === 0) {
+        showMessage('ダウンロードするログがありません。', 'error');
+        return;
+      }
+
+      const headers = ['Timestamp', 'Event', 'Location', 'Device Type', 'URL', 'Scroll Position'];
+      const rows = logs.map(log => [
+        log.timestamp || '-',
+        log.event || '-',
+        log.params?.location || '-',
+        log.params?.device_type || '-',
+        log.params?.url || '-',
+        log.params?.scroll_position || '-'
+      ]);
+
+      const csv = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+      ].join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `azvelia_tracking_logs_${Date.now()}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showMessage('CSVファイルをダウンロードしました。', 'success');
+    }
+
+    function copyToClipboard() {
+      logs = loadLogs();
+      if (logs.length === 0) {
+        showMessage('コピーするログがありません。', 'error');
+        return;
+      }
+
+      const text = JSON.stringify(logs, null, 2);
+      navigator.clipboard.writeText(text).then(() => {
+        showMessage('クリップボードにコピーしました。', 'success');
+      }).catch(() => {
+        showMessage('コピーに失敗しました。', 'error');
+      });
+    }
+
+    function clearLogs() {
+      if (!confirm('本当にログをクリアしますか？この操作は取り消せません。')) {
+        return;
+      }
+
+      localStorage.removeItem('azvelia_tracking_logs');
+      logs = [];
+      document.getElementById('logPreview').textContent = 'ログがクリアされました。';
+      document.getElementById('logCount').textContent = '0';
+      document.getElementById('eventCount').textContent = '0';
+      document.getElementById('ctaClickCount').textContent = '0';
+      showMessage('ログをクリアしました。', 'success');
+    }
+
+    function showMessage(text, type) {
+      const message = document.getElementById('message');
+      message.textContent = text;
+      message.className = `message ${type} show`;
+      setTimeout(() => {
+        message.classList.remove('show');
+      }, 5000);
+    }
+
+    // ページ読み込み時に自動表示
+    window.addEventListener('load', () => {
+      displayLogs();
+    });
+  </script>
+</body>
+</html>
+

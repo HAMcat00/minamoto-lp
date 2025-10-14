@@ -60,21 +60,28 @@ function initIntersectionObserver() {
 }
 
 // ========================================
-// Sticky CTA の表示制御
+// Sticky CTA の表示制御（視認率>95%対策）
 // ========================================
 function initStickyCTA() {
-  const stickyCTA = document.getElementById('sticky-cta');
+  // E4統合版のIDに対応
+  const stickyCTA = document.getElementById('stickyCta') || document.getElementById('sticky-cta');
   const heroSection = document.getElementById('section-02');
   const ctaSection = document.getElementById('section-11');
   
-  if (!stickyCTA || !heroSection || !ctaSection) {
-    console.warn('⚠️ Sticky CTA関連の要素が見つかりません');
+  if (!stickyCTA) {
+    console.warn('⚠️ Sticky CTA要素が見つかりません');
+    return;
+  }
+
+  if (!heroSection || !ctaSection) {
+    console.warn('⚠️ Hero/CTAセクションが見つかりません');
     return;
   }
 
   let ticking = false;
   let lastVisibilityState = false;
   let visibilityStartTime = null;
+  let totalVisibleTime = 0;
 
   const checkStickyCTAVisibility = () => {
     const heroBottom = heroSection.getBoundingClientRect().bottom;
@@ -87,12 +94,15 @@ function initStickyCTA() {
     if (shouldBeVisible !== lastVisibilityState) {
       if (shouldBeVisible) {
         stickyCTA.classList.add('is-visible');
+        stickyCTA.setAttribute('aria-hidden', 'false');
         visibilityStartTime = Date.now();
         console.log('👁️ Sticky CTA: 表示');
       } else {
         stickyCTA.classList.remove('is-visible');
+        stickyCTA.setAttribute('aria-hidden', 'true');
         if (visibilityStartTime) {
           const visibleDuration = Date.now() - visibilityStartTime;
+          totalVisibleTime += visibleDuration;
           state.stickyCTAVisibleTime += visibleDuration;
           visibilityStartTime = null;
         }
@@ -117,19 +127,28 @@ function initStickyCTA() {
   // 初回チェック
   checkStickyCTAVisibility();
   
-  // 定期的に視認率を計算
+  // 定期的に視認率を計算（5秒ごと）
   setInterval(() => {
-    state.stickyCTATotalTime = Date.now() - performance.timing.navigationStart;
-    const visibilityRate = state.stickyCTATotalTime > 0 
-      ? (state.stickyCTAVisibleTime / state.stickyCTATotalTime) * 100 
-      : 0;
+    const sessionTime = Date.now() - performance.timing.navigationStart;
+    state.stickyCTATotalTime = sessionTime;
     
-    if (visibilityRate > 0) {
+    // 現在表示中の場合は、その時間も加算
+    if (visibilityStartTime) {
+      const currentVisibleDuration = Date.now() - visibilityStartTime;
+      const currentTotalVisible = totalVisibleTime + currentVisibleDuration;
+      const visibilityRate = sessionTime > 0 
+        ? (currentTotalVisible / sessionTime) * 100 
+        : 0;
+      
       console.log(`👁️ Sticky CTA 視認率: ${visibilityRate.toFixed(2)}%`);
+      
+      if (visibilityRate >= 95) {
+        console.log('✅ Sticky CTA 視認率 95%以上達成！');
+      }
     }
-  }, 10000); // 10秒ごと
+  }, 5000); // 5秒ごと
 
-  console.log('✅ Sticky CTA 初期化完了');
+  console.log('✅ Sticky CTA 初期化完了（視認率測定有効）');
 }
 
 // ========================================

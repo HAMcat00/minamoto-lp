@@ -183,17 +183,19 @@ ol {
 }
 
 /* ========================================
-   レイアウト
+   レイアウト（40px/20px余白システム）
    ======================================== */
 .container {
   width: 100%;
   max-width: var(--breakpoint-xl);
   margin: 0 auto;
+  /* Mobile: 20px左右（--spacing-md = 20px） */
   padding: 0 var(--spacing-md);
 }
 
 @media (min-width: 768px) {
   .container {
+    /* Tablet/Desktop: 40px左右（--spacing-lg = 40px） */
     padding: 0 var(--spacing-lg);
   }
 }
@@ -366,21 +368,24 @@ ol {
 }
 
 /* ========================================
-   コンポーネント：セクション
+   コンポーネント：セクション（40px/20px余白システム）
    ======================================== */
 .section {
-  padding: var(--spacing-xl) 0;
+  /* Mobile: 40px上下（--spacing-lg = 40px） */
+  padding: var(--spacing-lg) 0;
   position: relative;
 }
 
 @media (min-width: 768px) {
   .section {
+    /* Tablet: 80px上下（--spacing-2xl = 80px） */
     padding: var(--spacing-2xl) 0;
   }
 }
 
 @media (min-width: 1024px) {
   .section {
+    /* Desktop: 120px上下（--spacing-3xl = 120px） */
     padding: var(--spacing-3xl) 0;
   }
 }
@@ -595,6 +600,18 @@ ol {
   z-index: 1;
 }
 
+/* Hero画像（CLS対策：固定アスペクト比） */
+.hero__image-main {
+  width: 100%;
+  height: auto;
+  /* CLS対策：アスペクト比を明示 */
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  display: block;
+}
+
+/* 画像読み込み前のプレースホルダー */
 .hero__image-placeholder {
   width: 100%;
   max-width: 680px;
@@ -954,12 +971,24 @@ ol {
   font-size: var(--font-size-lg);
 }
 
+/* Feature画像（CLS対策） */
+.feature__image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
 .feature__image-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
   background: var(--color-primary-gradient);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  /* CLS対策：最小高さを確保 */
+  min-height: 300px;
 }
 
 /* ========================================
@@ -1261,23 +1290,28 @@ ol {
 }
 
 /* ========================================
-   Sticky CTA
+   Sticky CTA（視認率>95%対策）
    ======================================== */
-.sticky-cta {
+.sticky-cta,
+.sticky-cta-e4 {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: var(--color-bg-primary);
-  box-shadow: 0 -4px 12px var(--color-shadow-medium);
+  box-shadow: 0 -4px 16px var(--color-shadow-medium);
   z-index: var(--z-sticky);
   transform: translateY(100%);
   transition: transform var(--transition-base);
+  /* CLS対策：固定高さ */
   height: 88px;
   padding-bottom: env(safe-area-inset-bottom);
+  /* 視認性向上 */
+  border-top: 2px solid var(--color-primary);
 }
 
-.sticky-cta.is-visible {
+.sticky-cta.is-visible,
+.sticky-cta-e4.is-visible {
   transform: translateY(0);
 }
 
@@ -1289,11 +1323,29 @@ ol {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
+  /* CLS対策：固定高さ */
   height: 88px;
 }
 
+/* E4統合版のSticky CTA */
+.sticky-cta-e4 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  padding: var(--spacing-md);
+}
+
+.btn-sticky {
+  width: 100%;
+  max-width: 600px;
+  /* 視認性向上：より目立つシャドウ */
+  box-shadow: var(--shadow-primary);
+}
+
 @media (min-width: 768px) {
-  .sticky-cta__content {
+  .sticky-cta__content,
+  .sticky-cta-e4 .container {
     padding: var(--spacing-md) var(--spacing-lg);
   }
 }
@@ -1308,11 +1360,13 @@ ol {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
 }
 
 .sticky-cta__subtitle {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
+  line-height: var(--line-height-tight);
 }
 
 @media (min-width: 768px) {
@@ -1430,6 +1484,116 @@ a:focus-visible {
 
 .fade-in.is-visible {
   will-change: auto;
+}
+
+/* ========================================
+   QRモーダル（E4統合）
+   ======================================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: var(--z-modal);
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  backdrop-filter: blur(4px);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  /* CLS対策：最小高さ */
+  min-height: 400px;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.modal-close:hover {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  transform: rotate(90deg);
+}
+
+.qr-instruction {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: var(--spacing-md) 0;
+}
+
+.qr-code-wrapper {
+  /* CLS対策：固定サイズ */
+  width: 280px;
+  height: 280px;
+  margin: var(--spacing-lg) auto;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: var(--spacing-md) 0;
+}
+
+/* ========================================
+   ボタン拡張（E4統合）
+   ======================================== */
+.btn-icon {
+  font-size: var(--font-size-xl);
+  margin-right: var(--spacing-xs);
+  display: inline-block;
+  line-height: 1;
+}
+
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 /* ========================================

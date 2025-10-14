@@ -10,6 +10,7 @@
     "lighthouse": "lighthouse http://localhost:8000 --view --output html --output-path ./reports/lighthouse-report.html",
     "lighthouse:ci": "lighthouse http://localhost:8000 --output json --output-path ./reports/lighthouse-report.json --chrome-flags='--headless'",
     "test:seo": "node scripts/test-seo.js",
+    "verify:dod": "node scripts/verify-dod.js",
     "preview": "npx http-server dist -p 8000 -c-1"
   },
   "keywords": [
