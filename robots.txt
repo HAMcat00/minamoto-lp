@@ -1,0 +1,14 @@
+# robots.txt for 源 -MINAMOTO-
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://minamoto.example.com/sitemap.xml
+
+# Disallow admin/private areas (if any in future)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+

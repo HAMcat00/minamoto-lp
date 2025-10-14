@@ -1,47 +1,336 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AZVELIA - 静的ランディングページ">
-    <meta name="theme-color" content="#2563eb">
-    <title>AZVELIA</title>
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="style.css" as="style">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- DNS Prefetch for external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- セキュリティ -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
+  
+  <!-- SEO基本設定 -->
+  <title>完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】</title>
+  <meta name="description" content="鶴ヶ島の現場男子へ。手の届く最強、完全無欠の唐揚げ弁当を《500円・送料無料》でお届け。スマホ1つで今すぐLINE注文。">
+  <meta name="keywords" content="唐揚げ弁当,鶴ヶ島,配達,デリバリー,ワンコイン,500円,源,MINAMOTO,現場弁当,LINE注文">
+  
+  <!-- OGP設定 (1200×630px) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】">
+  <meta property="og:description" content="鶴ヶ島の現場男子へ。手の届く最強、完全無欠の唐揚げ弁当を《500円・送料無料》でお届け。スマホ1つで今すぐ注文。">
+  <meta property="og:image" content="https://minamoto.example.com/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、ワンコイン500円で配達">
+  <meta property="og:url" content="https://minamoto.example.com/">
+  <meta property="og:site_name" content="源 -MINAMOTO-">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card (1200×630px) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】">
+  <meta name="twitter:description" content="鶴ヶ島の現場男子へ。完全無欠の唐揚げ弁当を500円・送料無料で配達。今すぐスマホで注文。">
+  <meta name="twitter:image" content="https://minamoto.example.com/images/ogp.jpg">
+  <meta name="twitter:image:alt" content="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、ワンコイン500円で配達">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="/images/hero.webp" as="image" type="image/webp">
+  
+  <!-- DNS Prefetch for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- JSON-LD構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "源 -MINAMOTO-",
+    "image": "https://minamoto.example.com/images/ogp.jpg",
+    "url": "https://minamoto.example.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "埼玉県",
+      "addressLocality": "鶴ヶ島市"
+    },
+    "servesCuisine": "Japanese",
+    "priceRange": "¥",
+    "areaServed": "鶴ヶ島市",
+    "description": "完全無欠の唐揚げ弁当を《500円・送料無料》で職場・現場へ配達。",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "弁当メニュー",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "完全無欠の唐揚げ弁当",
+            "description": "サクサクジューシーな黄金色の唐揚げ弁当",
+            "image": "https://minamoto.example.com/images/karaage-closeup.jpg"
+          },
+          "price": "500",
+          "priceCurrency": "JPY"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1>AZVELIA</h1>
-            </div>
-        </nav>
-    </header>
+  <!-- ヘッダー -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>源 -MINAMOTO-</h1>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#concept">こだわり</a></li>
+          <li><a href="#menu">メニュー</a></li>
+          <li><a href="#delivery">配達エリア</a></li>
+          <li><a href="#order">注文方法</a></li>
+        </ul>
+      </nav>
+      <a href="#cta" class="cta-button header-cta" data-cta-location="header">
+        今すぐ注文
+      </a>
+    </div>
+  </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Welcome to AZVELIA</h2>
-                <p>静的ランディングページのベース構成</p>
-            </div>
-        </section>
-    </main>
+  <!-- 追従CTAボタン -->
+  <div id="sticky-cta" class="sticky-cta">
+    <a href="#cta" class="cta-button" data-cta-location="sticky">
+      LINEで注文する
+    </a>
+  </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 AZVELIA. All rights reserved.</p>
+  <!-- ヒーロー -->
+  <section id="hero" class="hero section-trackable" data-section-name="hero">
+    <picture>
+      <source srcset="/images/placeholders/karaage-closeup.svg" type="image/svg+xml">
+      <img 
+        src="/images/placeholders/karaage-closeup.svg" 
+        alt="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、熱々できたてをお届け" 
+        class="hero-image"
+        width="1200"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
+    <div class="hero-content">
+      <h2 class="hero-title">完全無欠の唐揚げ弁当</h2>
+      <p class="hero-subtitle">鶴ヶ島の現場男子へ</p>
+      <p class="hero-price">ワンコイン<strong>500円</strong>・送料無料</p>
+      <a href="#cta" class="cta-button hero-cta" data-cta-location="hero">
+        今すぐLINEで注文
+      </a>
+    </div>
+  </section>
+
+  <!-- こだわり -->
+  <section id="concept" class="concept section-trackable" data-section-name="concept">
+    <div class="container">
+      <h2 class="section-title">3つのこだわり</h2>
+      <div class="concept-grid">
+        <div class="concept-item">
+          <div class="concept-icon">🍗</div>
+          <h3>完全無欠の味</h3>
+          <p>サクサクジューシーな黄金色の唐揚げ。秘伝のタレで下味をつけ、二度揚げで外はカリッと中はジューシーに。</p>
         </div>
-    </footer>
+        <div class="concept-item">
+          <div class="concept-icon">💰</div>
+          <h3>ワンコイン500円</h3>
+          <p>手の届く最強。送料無料で職場・現場へお届け。毎日でも気軽に注文できる価格設定。</p>
+        </div>
+        <div class="concept-item">
+          <div class="concept-icon">📱</div>
+          <h3>スマホで簡単</h3>
+          <p>LINEで今すぐ注文。わずか3タップで完了。注文から最短30分でお届けします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Defer non-critical JavaScript -->
-    <script src="main.js" defer></script>
+  <!-- メニュー -->
+  <section id="menu" class="menu section-trackable" data-section-name="menu">
+    <div class="container">
+      <h2 class="section-title">メニュー</h2>
+      <div class="menu-item-detail">
+        <div class="menu-image">
+          <picture>
+            <source srcset="/images/placeholders/karaage-closeup.svg" type="image/svg+xml">
+            <img 
+              src="/images/placeholders/karaage-closeup.svg" 
+              alt="完全無欠の唐揚げ弁当 - ボリューム満点、ジューシーな唐揚げ6個とご飯、漬物のセット" 
+              loading="lazy"
+              width="600"
+              height="400"
+              decoding="async"
+            >
+          </picture>
+        </div>
+        <div class="menu-details">
+          <h3>完全無欠の唐揚げ弁当</h3>
+          <p class="menu-price"><strong>500円</strong>（税込・送料無料）</p>
+          <ul class="menu-features">
+            <li>✓ ジューシーな唐揚げ×6個</li>
+            <li>✓ 炊きたてご飯（大盛り無料）</li>
+            <li>✓ 自家製漬物</li>
+            <li>✓ ボリューム満点</li>
+          </ul>
+          <a href="#cta" class="cta-button" data-cta-location="menu">
+            この弁当を注文する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 配達エリア -->
+  <section id="delivery" class="delivery section-trackable" data-section-name="delivery">
+    <div class="container">
+      <h2 class="section-title">配達エリア</h2>
+      <div class="delivery-content">
+        <div class="delivery-info">
+          <h3>鶴ヶ島市内の職場・現場へ配達</h3>
+          <p class="delivery-description">配達時間：11:00〜13:00（平日のみ）<br>最短30分でお届けします。</p>
+          <ul class="delivery-features">
+            <li>✓ 送料無料</li>
+            <li>✓ 最短30分配達</li>
+            <li>✓ 職場・現場OK</li>
+            <li>✓ 時間指定可能</li>
+          </ul>
+        </div>
+        <div class="delivery-map">
+          <picture>
+            <source srcset="/images/placeholders/map.svg" type="image/svg+xml">
+            <img 
+              src="/images/placeholders/map.svg" 
+              alt="配達対応エリアマップ - 鶴ヶ島市内全域、主要な職場・建設現場へ配達可能" 
+              loading="lazy"
+              width="800"
+              height="600"
+              decoding="async"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINE注文方法 -->
+  <section id="order" class="order section-trackable" data-section-name="order">
+    <div class="container">
+      <h2 class="section-title">LINEで簡単3ステップ</h2>
+      <div class="order-content">
+        <div class="order-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>友だち追加</h3>
+            <p>源の公式LINEを追加</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>注文情報を送信</h3>
+            <p>個数・配達先・時間を選択</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>配達完了</h3>
+            <p>最短30分でお届け</p>
+          </div>
+        </div>
+        <div class="order-image">
+          <picture>
+            <source srcset="/images/placeholders/line-order.svg" type="image/svg+xml">
+            <img 
+              src="/images/placeholders/line-order.svg" 
+              alt="LINEでの注文フロー画面 - チャット形式で個数・配達先・時間を選択して簡単注文、わずか3ステップで完了" 
+              loading="lazy"
+              width="400"
+              height="800"
+              decoding="async"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="cta-section section-trackable" data-section-name="cta">
+    <div class="container">
+      <h2 class="cta-title">今すぐ注文する</h2>
+      <p class="cta-description">LINEで簡単注文。最短30分でお届けします。</p>
+      <a href="https://line.me/R/ti/p/@minamoto" class="cta-button cta-button-large" data-cta-location="main-cta">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"></path>
+        </svg>
+        LINEで今すぐ注文
+      </a>
+      <div class="cta-note">
+        <p>※配達時間：11:00〜13:00（平日のみ）</p>
+        <p>※鶴ヶ島市内限定・送料無料</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>源 -MINAMOTO-</h3>
+          <p>完全無欠の唐揚げ弁当を500円でお届け</p>
+        </div>
+        <div class="footer-links">
+          <h4>リンク</h4>
+          <ul>
+            <li><a href="#concept">こだわり</a></li>
+            <li><a href="#menu">メニュー</a></li>
+            <li><a href="#delivery">配達エリア</a></li>
+            <li><a href="#order">注文方法</a></li>
+          </ul>
+        </div>
+        <div class="footer-legal">
+          <h4>法務</h4>
+          <ul>
+            <li><a href="/privacy">プライバシーポリシー</a></li>
+            <li><a href="/terms">利用規約</a></li>
+            <li><a href="/tokushoho">特定商取引法</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 源 -MINAMOTO-. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js" defer></script>
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      'send_page_view': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
 </body>
 </html>

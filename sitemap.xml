@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://minamoto.example.com/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://minamoto.example.com/images/ogp.jpg</image:loc>
+      <image:title>完全無欠の唐揚げ弁当</image:title>
+      <image:caption>サクサクジューシーな黄金色の唐揚げ弁当、ワンコイン500円で配達</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://minamoto.example.com/privacy</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://minamoto.example.com/terms</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- 特定商取引法 -->
+  <url>
+    <loc>https://minamoto.example.com/tokushoho</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
+

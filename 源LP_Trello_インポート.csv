@@ -1,0 +1,65 @@
+List Name,Card Name,Description,Labels,Due Date,Members
+M1 基盤セットアップ（Day 0–2）,リポジトリ作成・ブランチルール定義・CI雛形,"GitHub新規／branch-protection／PRテンプレ／Vercel接続。DoD: mainへPR必須・自動デプロイ成功。
+担当: E1
+依存: ",High,2025-10-16,E1
+M1 基盤セットアップ（Day 0–2）,LP骨組みHTMLたたき台（セクション①〜⑬）,"各セクションにid付与。仮テキスト配置。DoD: Lighthouse Accessibility≧90。
+担当: E2
+依存: リポジトリ作成・ブランチルール定義・CI雛形",High,2025-10-16,E2
+M1 基盤セットアップ（Day 0–2）,計測設計ドキュメント（GA4イベント命名・KPI）,"イベント: view_section, click_CTA, submit_order。KPI: CVR, CTR, 離脱率。
+担当: E3
+依存: ",High,2025-10-16,E3
+M1 基盤セットアップ（Day 0–2）,LINE注文導線仕様書（URI/QR/遷移）,"CTA→LINE公式URL/LIFF仕様／Webhook要否判断。DoD: 仕様書完成・Webhook設計メモ作成。
+担当: E4
+依存: ",High,2025-10-16,E4
+M2 MVP完成（Day 3–5）,CTA→LINEリンク実装（計測パラメータ付与）,"ヒーロー・追従CTA実装・UTMパラメータ付与・イベント計測。DoD: 計測パラメータ記録確認。
+担当: E4
+依存: LINE注文導線仕様書（URI/QR/遷移）",High,2025-10-19,E4
+M2 MVP完成（Day 3–5）,QRコード表示ブロック実装（現場配布用）,"モーダル実装・QRコード生成・レスポンシブ対応。DoD: iOS/Android実機で表示確認。
+担当: E4
+依存: CTA→LINEリンク実装（計測パラメータ付与）",High,2025-10-19,E4
+M1 基盤セットアップ（Day 0–2）,画像アセット収集・最適化方針（WebP・alt）,"必要画像リスト：①唐揚げ接写②配達③地図④LINE画面。最適化手順を定義。
+担当: E5
+依存: ",High,2025-10-16,E5
+M2 MVP完成（Day 3–5）,レスポンシブCSS設計（モバイル優先）,"Spacing: 40px/20px・コンポーネント化・Hover/Active。DoD: CLS<0.1。
+担当: E2
+依存: LP骨組みHTMLたたき台（セクション①〜⑬）",High,2025-10-19,E2
+M2 MVP完成（Day 3–5）,スクロール演出・CTA追従（JS）,"FadeIn/IntersectionObserver・追従CTA・スムーススクロール。
+担当: E2
+依存: レスポンシブCSS設計（モバイル優先）",High,2025-10-19,E2
+M2 MVP完成（Day 3–5）,GA4実装・イベント送信・DebugView検証,"gtag設置・イベント3種・一致率確認。DoD: DebugViewで発火確認動画添付。
+担当: E3
+依存: 計測設計ドキュメント（GA4イベント命名・KPI）",High,2025-10-19,E3
+M2 MVP完成（Day 3–5）,SEO基本（title/meta/h1/構造化データ）,"JSON-LD: LocalBusiness/Organization。DoD: LCP<2.5s。
+担当: E3
+依存: ",High,2025-10-19,E3
+M2 MVP完成（Day 3–5）,LINE導線・フォーム遷移テスト,"CTAリンク・QRコード表示・スマホ実機テスト。
+担当: E4
+依存: LINE注文導線仕様書（URI/QR/遷移）",High,2025-10-19,E4
+M2 MVP完成（Day 3–5）,OGP画像／SNSシェア文生成,"OGP 1200x630・altテキスト・短縮URL。
+担当: E5
+依存: 画像アセット収集・最適化方針（WebP・alt）",High,2025-10-19,E5
+M3 ローンチ（Day 6–7）,パフォーマンス最適化（画像/コード/キャッシュ）,"WebP変換・LazyLoad・minify・Vercel設定。DoD: Lighthouse Perf≧90。
+担当: E1
+依存: レスポンシブCSS設計（モバイル優先）;スクロール演出・CTA追従（JS）",High,2025-10-21,E1
+M3 ローンチ（Day 6–7）,品質ゲート（E2/E3/E4/E5横断）,"アクセシビリティ/SEO/計測/導線/OGPの総合レビュー＆修正完了。
+担当: E1
+依存: パフォーマンス最適化（画像/コード/キャッシュ）",High,2025-10-21,E1
+M3 ローンチ（Day 6–7）,正式デプロイ＆動作確認手順書,"Releaseタグ付け・チェクリスト・ロールバック手順。
+担当: E1
+依存: 品質ゲート（E2/E3/E4/E5横断）",High,2025-10-21,E1
+M4 PDCA＆拡張（Week 2）,A/Bテスト基盤（CTA文言・キービジュアル）,"GTM or 自作スプリット・計測定義・結果レポひな形。
+担当: E3
+依存: GA4実装・イベント送信・DebugView検証",High,2025-10-28,E3
+M4 PDCA＆拡張（Week 2）,ヒートマップ導入（Hotjar/Clarity）,"離脱セクション特定・改善仮説ノート。
+担当: E3
+依存: ",High,2025-10-28,E3
+M4 PDCA＆拡張（Week 2）,口コミセクション自動更新（週次）,"最新レビュー差し替え・今週の声。DoD: 週1更新の運用手順書。
+担当: E5
+依存: ",High,2025-10-28,E5
+M4 PDCA＆拡張（Week 2）,LINE計測連携（遷移数・CV・友だち追加）,"LIFF or 計測パラメータ整備・計測表。
+担当: E4
+依存: ",High,2025-10-28,E4
+M4 PDCA＆拡張（Week 2）,拡張：限定性ロジック（残数表示/売切）,"在庫カウンタUI（擬似でも可）・心理的希少性を演出。
+担当: E2
+依存: ",High,2025-10-28,E2
+

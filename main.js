@@ -5,14 +5,18 @@
 
 // ==================== 設定 ====================
 const CONFIG = {
-  // LINE公式アカウントURL（実際のURLに置き換えてください）
-  lineUrl: 'https://line.me/R/ti/p/@YOUR_LINE_ID',
+  // LINE公式アカウントURL
+  // 本番環境では実際のLINE公式アカウントURLに置き換えてください
+  // 例: 'https://line.me/R/ti/p/@123abcde'
+  lineUrl: 'https://line.me/R/ti/p/@azvelia',
   
-  // 計測パラメータ設定
+  // 計測パラメータ設定（GA4連携用）
   tracking: {
-    utm_source: 'azvelia_lp',
-    utm_medium: 'web',
-    utm_campaign: 'order_2025'
+    utm_source: 'azvelia_lp',          // 流入元: LPサイト
+    utm_medium: 'web',                  // メディア: Web
+    utm_campaign: 'order_2025_q4',     // キャンペーン: 2025年Q4注文キャンペーン
+    utm_term: '',                       // キーワード（オプション）
+    // utm_content は CTA配置場所により動的に設定: hero / qr-modal / sticky
   },
   
   // QRコード生成API（Google Chart API使用）
