@@ -1,0 +1,39 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFF;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" fill="url(#heroBg)"/>
+  
+  <!-- グロー効果 -->
+  <ellipse cx="960" cy="540" rx="600" ry="400" fill="url(#glow)"/>
+  
+  <!-- 唐揚げイメージ（抽象的表現） -->
+  <g opacity="0.8">
+    <circle cx="960" cy="540" r="280" fill="#D2691E" opacity="0.6"/>
+    <circle cx="880" cy="480" r="180" fill="#CD853F" opacity="0.7"/>
+    <circle cx="1040" cy="600" r="200" fill="#DEB887" opacity="0.7"/>
+    <circle cx="1020" cy="460" r="150" fill="#F4A460" opacity="0.6"/>
+  </g>
+  
+  <!-- テキストオーバーレイ -->
+  <text x="960" y="300" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="96" fill="#FFF" text-anchor="middle" font-weight="bold" style="text-shadow: 0 4px 12px rgba(0,0,0,0.5);">完全無欠の唐揚げ弁当</text>
+  <text x="960" y="400" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="48" fill="#FFF" text-anchor="middle" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">鶴ヶ島の現場男子へ</text>
+  <text x="960" y="780" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="72" fill="#FFF" text-anchor="middle" font-weight="bold" style="text-shadow: 0 4px 12px rgba(0,0,0,0.5);">ワンコイン500円</text>
+  <text x="960" y="850" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="36" fill="#FFF" text-anchor="middle" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">送料無料・最短30分配達</text>
+  
+  <!-- 装飾要素 -->
+  <circle cx="200" cy="200" r="60" fill="#FFF" opacity="0.2"/>
+  <circle cx="1720" cy="880" r="80" fill="#FFF" opacity="0.2"/>
+  <circle cx="300" cy="900" r="50" fill="#FFF" opacity="0.15"/>
+  <circle cx="1650" cy="180" r="70" fill="#FFF" opacity="0.15"/>
+</svg>

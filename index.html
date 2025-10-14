@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- セキュリティ -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
   
   <title>完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】</title>
-  <meta name="description" content="鶴ヶ島の現場男子へ。手の届く最強、完全無欠の唐揚げ弁当を《500円・送料無料》でお届け。スマホ1つで今すぐLINE注文。">
+  <meta name="description" content="鶴ヶ島の現場男子へ。サクサクジューシーな黄金色の唐揚げ弁当を《ワンコイン500円・送料無料》でお届け。LINEで簡単注文、最短30分配達。">
   
   <!-- OGP設定 (1200×630px) -->
   <meta property="og:type" content="website">
@@ -34,11 +34,26 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   
   <!-- Preload Critical Resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
-  
+
+  <!-- Google Analytics 4 (E3: Data & Tracking) -->
+  <script>
+    window.GA4_MEASUREMENT_ID = '{{GA_MEASUREMENT_ID}}';
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{GA_MEASUREMENT_ID}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{GA_MEASUREMENT_ID}}', {
+      'send_page_view': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   
@@ -49,80 +64,100 @@
   
   <!-- ① ヘッダー（Header） -->
   <header id="section-01" class="header fade-in">
-    <div class="container">
+            <div class="container">
       <div class="header__content">
         <div class="logo">
-          <h1>源LP</h1>
-        </div>
+          <h1>源 -MINAMOTO-</h1>
+            </div>
         <nav class="nav" role="navigation" aria-label="メインナビゲーション">
-          <a href="#section-02" class="nav__link">特徴</a>
-          <a href="#section-08" class="nav__link">料金</a>
-          <a href="#section-12" class="nav__link">お客様の声</a>
+          <a href="#section-02" class="nav__link">こだわり</a>
+          <a href="#section-08" class="nav__link">メニュー</a>
+          <a href="#section-12" class="nav__link">注文方法</a>
         </nav>
       </div>
     </div>
-  </header>
+    </header>
 
   <!-- ② ヒーローセクション（Hero） -->
   <section id="section-02" class="hero section fade-in">
     <div class="container">
       <div class="hero__content">
-        <h2 class="hero__title">あなたのビジネスを<br>次のステージへ</h2>
-        <p class="hero__description">モバイルファーストで設計された、最高のユーザー体験を提供します。</p>
-        <button class="btn btn--primary btn--large hero__cta" data-cta="hero">
-          <span>今すぐ始める</span>
-        </button>
+        <h2 class="hero__title">完全無欠の唐揚げ弁当</h2>
+        <p class="hero__description">鶴ヶ島の現場男子へ。手の届く最強、ワンコイン500円・送料無料。</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn--primary btn--large hero__cta" id="lineCta" data-location="hero">
+            <span class="btn-icon">📱</span>
+            <span>LINEで注文する</span>
+          </a>
+          <button class="btn btn--secondary btn--large" id="showQrBtn">
+            <span class="btn-icon">📷</span>
+            <span>QRコードを表示</span>
+          </button>
+        </div>
       </div>
       <div class="hero__image">
-        <div class="hero__image-placeholder" role="img" aria-label="ヒーロー画像"></div>
+        <picture>
+          <source srcset="/public/images/hero.webp" type="image/webp" media="(min-width: 1200px)" width="1920" height="1080">
+          <source srcset="/public/images/hero-tablet.webp" type="image/webp" media="(min-width: 768px)" width="1200" height="675">
+          <source srcset="/public/images/hero-mobile.webp" type="image/webp" media="(min-width: 375px)" width="800" height="450">
+          <img 
+            src="/public/images/hero.svg" 
+            alt="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、熱々できたてをワンコイン500円でお届け" 
+            width="1920" 
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+            class="hero__image-main"
+          >
+        </picture>
       </div>
     </div>
   </section>
 
-  <!-- ③ 問題提起（Problem） -->
+  <!-- ③ こだわり（Concept） -->
   <section id="section-03" class="section section--alt fade-in">
     <div class="container">
-      <h2 class="section__title">こんなお悩みありませんか？</h2>
+      <h2 class="section__title">3つのこだわり</h2>
       <div class="problem-list">
         <div class="card">
-          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
-          <h3 class="card__title">モバイル対応が不十分</h3>
-          <p class="card__text">スマートフォンでの表示が崩れて、ユーザーが離脱してしまう</p>
+          <span class="card__icon" role="img" aria-label="唐揚げアイコン">🍗</span>
+          <h3 class="card__title">完全無欠の味</h3>
+          <p class="card__text">サクサクジューシーな黄金色の唐揚げ。秘伝のタレで下味をつけ、二度揚げで外はカリッと中はジューシーに。</p>
         </div>
         <div class="card">
-          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
-          <h3 class="card__title">読み込みが遅い</h3>
-          <p class="card__text">ページの表示に時間がかかり、ユーザーの離脱率が高い</p>
+          <span class="card__icon" role="img" aria-label="価格アイコン">💰</span>
+          <h3 class="card__title">ワンコイン500円</h3>
+          <p class="card__text">手の届く最強。送料無料で職場・現場へお届け。毎日でも気軽に注文できる価格設定。</p>
         </div>
         <div class="card">
-          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
-          <h3 class="card__title">CVRが低い</h3>
-          <p class="card__text">訪問者は多いのに、なかなかコンバージョンに繋がらない</p>
+          <span class="card__icon" role="img" aria-label="スマホアイコン">📱</span>
+          <h3 class="card__title">スマホで簡単</h3>
+          <p class="card__text">LINEで今すぐ注文。わずか3タップで完了。注文から最短30分でお届けします。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ④ ソリューション（Solution） -->
+  <!-- ④ メニュー（Menu） -->
   <section id="section-04" class="section fade-in">
     <div class="container">
-      <h2 class="section__title">源LPが解決します</h2>
-      <p class="section__description">最新のモバイルファースト設計で、すべての課題を解決します。</p>
+      <h2 class="section__title">メニュー</h2>
+      <p class="section__description">ボリューム満点、ジューシーな唐揚げ弁当をワンコインでお届け。</p>
       <div class="solution-grid card-grid card-grid--3">
         <div class="card">
-          <span class="card__icon" role="img" aria-label="レスポンシブアイコン">📱</span>
-          <h3 class="card__title">完全レスポンシブ</h3>
-          <p class="card__text">375px以上のあらゆるデバイスで完璧に表示されます。</p>
+          <span class="card__icon" role="img" aria-label="弁当アイコン">🍱</span>
+          <h3 class="card__title">完全無欠の唐揚げ弁当</h3>
+          <p class="card__text"><strong>500円</strong>（税込・送料無料）<br>ジューシーな唐揚げ×6個、炊きたてご飯（大盛り無料）、自家製漬物付き</p>
         </div>
         <div class="card">
-          <span class="card__icon" role="img" aria-label="高速アイコン">⚡</span>
-          <h3 class="card__title">高速表示</h3>
-          <p class="card__text">LCP 2.5秒以下を実現し、ユーザーを待たせません。</p>
+          <span class="card__icon" role="img" aria-label="配達アイコン">🚚</span>
+          <h3 class="card__title">配達エリア</h3>
+          <p class="card__text">鶴ヶ島市内全域<br>配達時間：11:00〜13:00（平日のみ）<br>最短30分でお届け</p>
         </div>
         <div class="card">
-          <span class="card__icon" role="img" aria-label="CVRアイコン">📈</span>
-          <h3 class="card__title">CVR 10%以上</h3>
-          <p class="card__text">最適化されたUIでコンバージョン率を最大化します。</p>
+          <span class="card__icon" role="img" aria-label="注文アイコン">📲</span>
+          <h3 class="card__title">注文方法</h3>
+          <p class="card__text">LINEで簡単3ステップ<br>①友だち追加 ②注文情報送信 ③配達完了<br>わずか3タップで完了</p>
         </div>
       </div>
     </div>
@@ -133,16 +168,26 @@
     <div class="container">
       <div class="feature__content">
         <div class="feature__text">
-          <h2 class="feature__title">モバイル先行設計</h2>
-          <p class="feature__description">スマートフォンユーザーを第一に考えた設計で、40px/20pxの最適な余白を実現。快適な操作性を提供します。</p>
+          <h2 class="feature__title">完全無欠の味</h2>
+          <p class="feature__description">サクサクジューシーな黄金色の唐揚げ。秘伝のタレで下味をつけ、二度揚げで外はカリッと中はジューシーに仕上げます。</p>
           <ul class="feature__list">
-            <li>タッチ操作に最適化されたUI</li>
-            <li>視認性の高いフォントサイズ</li>
-            <li>指でタップしやすいボタンサイズ</li>
+            <li>秘伝のタレで24時間漬け込み</li>
+            <li>二度揚げで外はカリッと中はジューシー</li>
+            <li>黄金色の美しい揚げ色</li>
           </ul>
         </div>
         <div class="feature__image">
-          <div class="feature__image-placeholder" role="img" aria-label="モバイル先行設計イメージ"></div>
+          <picture>
+            <source srcset="/public/images/concept.webp" type="image/webp">
+            <img 
+              src="/public/images/concept.svg" 
+              alt="3つのこだわり - サクサクジューシーな完全無欠の味、お手頃なワンコイン500円、スマホで簡単注文" 
+              width="800" 
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
         </div>
       </div>
     </div>
@@ -153,16 +198,26 @@
     <div class="container">
       <div class="feature__content feature__content--reverse">
         <div class="feature__text">
-          <h2 class="feature__title">高速パフォーマンス</h2>
-          <p class="feature__description">CLS<0.1を実現し、レイアウトシフトを最小限に抑えます。ユーザーにストレスを与えません。</p>
+          <h2 class="feature__title">最短30分配達</h2>
+          <p class="feature__description">鶴ヶ島市内全域へ、熱々の唐揚げ弁当を最短30分でお届け。職場・現場への配達も送料無料です。</p>
           <ul class="feature__list">
-            <li>画像の遅延読み込み対応</li>
-            <li>最適化されたCSSとJavaScript</li>
-            <li>WebP形式の軽量画像</li>
+            <li>鶴ヶ島市内全域対応</li>
+            <li>職場・建設現場OK</li>
+            <li>送料無料・時間指定可能</li>
           </ul>
         </div>
         <div class="feature__image">
-          <div class="feature__image-placeholder" role="img" aria-label="高速パフォーマンスイメージ"></div>
+          <picture>
+            <source srcset="/public/images/placeholders/delivery.webp" type="image/webp">
+            <img 
+              src="/public/images/placeholders/delivery.svg" 
+              alt="配達シーン - 熱々の唐揚げ弁当を迅速にお届け、最短30分で職場・現場へ" 
+              width="800" 
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
         </div>
       </div>
     </div>
@@ -173,16 +228,26 @@
     <div class="container">
       <div class="feature__content">
         <div class="feature__text">
-          <h2 class="feature__title">Sticky CTA</h2>
-          <p class="feature__description">画面に常に表示される追従型CTAで、視認率95%以上を達成。いつでもアクションを促します。</p>
+          <h2 class="feature__title">LINEで簡単注文</h2>
+          <p class="feature__description">わずか3ステップで注文完了。スマホから手軽にご注文いただけます。チャット形式で個数・配達先・時間を選択するだけ。</p>
           <ul class="feature__list">
-            <li>スクロール時も常に表示</li>
-            <li>目立つデザインで高いクリック率</li>
-            <li>コンバージョンを最大化</li>
+            <li>①友だち追加 - 公式LINEを追加</li>
+            <li>②注文情報送信 - 個数・配達先・時間を選択</li>
+            <li>③配達完了 - 最短30分でお届け</li>
           </ul>
         </div>
         <div class="feature__image">
-          <div class="feature__image-placeholder" role="img" aria-label="Sticky CTAイメージ"></div>
+          <picture>
+            <source srcset="/public/images/placeholders/line-order.webp" type="image/webp">
+            <img 
+              src="/public/images/placeholders/line-order.svg" 
+              alt="LINE注文フロー - チャット形式で個数・配達先・時間を選択、わずか3ステップで注文完了" 
+              width="400" 
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
         </div>
       </div>
     </div>
@@ -352,7 +417,7 @@
 
   <!-- ⑫ お客様の声（Testimonials） -->
   <section id="section-12" class="section section--alt fade-in">
-    <div class="container">
+            <div class="container">
       <h2 class="section__title">お客様の声</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
@@ -389,12 +454,12 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+            </div>
+        </section>
 
   <!-- ⑬ フッター（Footer） -->
   <footer id="section-13" class="footer fade-in">
-    <div class="container">
+        <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <h3 class="footer-title">源LP</h3>
@@ -429,23 +494,38 @@
       <div class="footer-bottom">
         <p>&copy; 2025 源LP. All rights reserved.</p>
       </div>
-    </div>
-  </footer>
+        </div>
+    </footer>
 
-  <!-- Sticky CTA -->
-  <div id="sticky-cta" class="sticky-cta">
-    <div class="sticky-cta__content">
-      <div class="sticky-cta__text">
-        <span class="sticky-cta__title">今すぐ始める</span>
-        <span class="sticky-cta__subtitle">無料トライアル実施中</span>
+  <!-- QRコード表示モーダル（E4 Integration） -->
+  <div id="qrModal" class="modal" role="dialog" aria-labelledby="qrModalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeQrBtn" aria-label="閉じる">&times;</button>
+      <h3 id="qrModalTitle">LINEで注文</h3>
+      <p class="qr-instruction">カメラで読み取ってください</p>
+      <div id="qrCodeContainer" class="qr-code-wrapper">
+        <!-- QRコードがここに生成されます -->
       </div>
-      <button class="btn btn--primary btn--small" data-cta="sticky-cta">
-        <span>申し込む</span>
-      </button>
+      <p class="qr-note">または下のボタンをタップ</p>
+      <a href="#" class="btn btn--primary btn--large btn-block" id="lineCtaQr" data-location="qr-modal">
+        <span class="btn-icon">📱</span>
+        <span>LINEで開く</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 追従CTA（E4 Integration） -->
+  <div id="stickyCta" class="sticky-cta-e4" aria-hidden="true">
+    <div class="container">
+      <a href="#" class="btn btn--primary btn--large btn-sticky" id="lineCtaSticky" data-location="sticky">
+        <span class="btn-icon">📱</span>
+        <span>LINEで注文する</span>
+      </a>
     </div>
   </div>
 
   <!-- Scripts -->
+    <script src="main.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

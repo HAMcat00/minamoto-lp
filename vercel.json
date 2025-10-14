@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "node scripts/vercel-build.js",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/(.*)",

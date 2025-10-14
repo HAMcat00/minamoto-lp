@@ -1,0 +1,39 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="conceptBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="url(#conceptBg)"/>
+  
+  <!-- 3つの円（3つのこだわりを表現） -->
+  <g opacity="0.9">
+    <!-- 左：完全無欠の味 -->
+    <circle cx="200" cy="300" r="120" fill="#FFD700" opacity="0.3"/>
+    <text x="200" y="280" font-family="Arial, sans-serif" font-size="64" text-anchor="middle">🍗</text>
+    <text x="200" y="340" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="20" fill="#FFF" text-anchor="middle" font-weight="bold">完全無欠の味</text>
+    
+    <!-- 中央：ワンコイン500円 -->
+    <circle cx="400" cy="300" r="120" fill="#FFD700" opacity="0.3"/>
+    <text x="400" y="280" font-family="Arial, sans-serif" font-size="64" text-anchor="middle">💰</text>
+    <text x="400" y="340" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="20" fill="#FFF" text-anchor="middle" font-weight="bold">ワンコイン500円</text>
+    
+    <!-- 右：スマホで簡単 -->
+    <circle cx="600" cy="300" r="120" fill="#FFD700" opacity="0.3"/>
+    <text x="600" y="280" font-family="Arial, sans-serif" font-size="64" text-anchor="middle">📱</text>
+    <text x="600" y="340" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="20" fill="#FFF" text-anchor="middle" font-weight="bold">スマホで簡単</text>
+  </g>
+  
+  <!-- タイトル -->
+  <text x="400" y="80" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="48" fill="#FFF" text-anchor="middle" font-weight="bold">3つのこだわり</text>
+  
+  <!-- 接続線 -->
+  <line x1="200" y1="420" x2="400" y2="420" stroke="#FFF" stroke-width="3" opacity="0.5"/>
+  <line x1="400" y1="420" x2="600" y2="420" stroke="#FFF" stroke-width="3" opacity="0.5"/>
+  
+  <!-- 説明文 -->
+  <text x="400" y="500" font-family="'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif" font-size="24" fill="#FFF" text-anchor="middle">サクサクジューシー × お手頃価格 × 簡単注文</text>
+</svg>
