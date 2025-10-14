@@ -1,230 +1,247 @@
-# 源LP - モバイルファーストランディングページ
+# 源（MINAMOTO）LP
+
+京都四条の本格和食料理店「源」のランディングページ
 
 ## 📋 プロジェクト概要
 
-E2（Frontend UI）の実装完了。モバイルファースト設計による高パフォーマンスなランディングページ。
+このリポジトリは、源（MINAMOTO）様のLP（ランディングページ）のソースコードです。
+5人のエンジニア体制（E1〜E5）で開発されており、本実装はE3（Data & Tracking）が担当しています。
 
-## 🎯 実装内容
+### 担当領域（E3: Data & Tracking）
+- ✅ GA4イベントトラッキング実装
+- ✅ SEO最適化（title/meta/JSON-LD）
+- ✅ Web Vitals計測
+- ✅ パフォーマンス最適化戦略
+- ✅ 計測仕様書作成
 
-### ✅ 完了項目
+## 🎯 Definition of Done (DoD)
 
-#### 1. セクション骨組み（①〜⑬）とSticky CTA
-- ✅ ① ヘッダー（Header）
-- ✅ ② ヒーローセクション（Hero）
-- ✅ ③ 問題提起（Problem）
-- ✅ ④ ソリューション（Solution）
-- ✅ ⑤ 特徴1（Feature 1）
-- ✅ ⑥ 特徴2（Feature 2）
-- ✅ ⑦ 特徴3（Feature 3）
-- ✅ ⑧ 料金（Pricing）
-- ✅ ⑨ フロー（Flow）
-- ✅ ⑩ FAQ
-- ✅ ⑪ CTA（Call to Action）
-- ✅ ⑫ お客様の声（Testimonials）
-- ✅ ⑬ フッター（Footer）
-- ✅ Sticky CTA（画面下部追従）
+### E3の達成基準
+- [x] GA4スクリプト実装（測定IDは環境変数管理）
+- [x] 3種のイベント実装（view_section, click_CTA, submit_order）
+- [x] SEO基本設定（title/meta description/h1）
+- [x] JSON-LD構造化データ（LocalBusiness/Restaurant）
+- [x] LCP<2.5s を満たす画像読み込み戦略
+- [ ] DebugViewでイベント発火動画撮影
+- [ ] Rich Results Testでスキーマ有効確認
+- [ ] Lighthouse SEO ≥90 達成
 
-#### 2. CSSトークン
-- ✅ カラー：`#DD2C00`（プライマリ）、`#F88C5E`（プライマリライト）
-- ✅ 余白：モバイル先行 40px/20px
-- ✅ 角丸：8px/12px/16px/24px
-- ✅ 影：3段階のシャドウ定義
+## 🚀 クイックスタート
 
-#### 3. スクロールFade（IntersectionObserver）
-- ✅ 全セクションでフェードイン効果
-- ✅ パフォーマンス最適化（一度表示されたら監視解除）
-- ✅ `prefers-reduced-motion` 対応
-
-## 🎨 デザインシステム
-
-### カラーパレット
-```css
---color-primary: #DD2C00        /* メインカラー */
---color-primary-light: #F88C5E  /* アクセント */
---color-primary-dark: #B71C00   /* ホバー時 */
-```
-
-### スペーシング
-```css
---spacing-md: 20px   /* モバイル基本余白 */
---spacing-lg: 40px   /* モバイルセクション余白 */
-```
-
-### レスポンシブブレークポイント
-- 375px：最小サポート幅
-- 768px：タブレット
-- 1200px：デスクトップ（max-width）
-
-## 📊 Definition of Done（DoD）検証
-
-### 1. ✅ モバイル対応（375px以上）
-- [x] 375px以上で崩れなし
-- [x] タッチ操作に最適化
-- [x] 40px/20pxの余白システム
-- [x] 最小タップ領域：48px × 48px
-
-### 2. ⏱️ CLS < 0.1
-- [x] CLS測定機能を実装（`script.js`）
-- [x] 固定サイズのコンポーネント配置
-- [x] アスペクト比の維持
-- [x] フォントの先読み（preconnect）
-- [x] `will-change`による最適化
-
-**測定方法：**
-```javascript
-// ブラウザのコンソールで確認
-// "📊 CLS値: 0.0xxx" が表示されます
-```
-
-### 3. 👁️ CTA視認率 > 95%
-- [x] Sticky CTA実装
-- [x] 視認率測定機能実装
-- [x] ヒーロー通過後に自動表示
-- [x] CTAセクション到達時に非表示
-- [x] z-index: 100で最前面配置
-
-**測定方法：**
-```javascript
-// ブラウザのコンソールで確認
-// "👁️ Sticky CTA 視認率: XX.XX%" が表示されます
-```
-
-### 4. ♿ アクセシビリティ
-- [x] セマンティックHTML
-- [x] フォーカス可視化
-- [x] 適切なコントラスト比
-- [x] キーボードナビゲーション
-
-### 5. 📈 パフォーマンス
-- [x] 画像遅延読み込み（LazyLoad）
-- [x] GPUアクセラレーション
-- [x] スクロールイベントのthrottle処理
-- [x] IntersectionObserver活用
-
-## 🚀 使用方法
-
-### ローカルでの確認
+### 1. 前提条件
 ```bash
-# 1. ファイルをブラウザで開く
-open index.html
+# Node.js 18以上
+node --version  # v18.0.0以上
 
-# または、シンプルなHTTPサーバーで起動
-# Python 3の場合
-python3 -m http.server 8000
-
-# Node.jsの場合（http-serverがインストール済みの場合）
-npx http-server -p 8000
+# npm 9以上
+npm --version   # 9.0.0以上
 ```
 
-### ブラウザでの確認項目
-1. **デベロッパーツールを開く**（F12）
-2. **コンソールを確認**
-   - CLS値が表示される
-   - Sticky CTA視認率が表示される
-   - LCP値が表示される
-3. **レスポンシブモード**
-   - 375px〜1200pxで表示を確認
-   - 横向き/縦向きの両方を確認
-4. **実機テスト**（推奨）
-   - iPhone SE（375px）
-   - iPhone 13 Pro（390px）
-   - Android各種
+### 2. セットアップ
+```bash
+# リポジトリをクローン
+git clone <repository-url>
+cd 源
 
-## 📱 対応デバイス
+# 依存関係をインストール
+npm install
 
-### ✅ テスト済み
-- iPhone SE（375px）
-- iPhone 12/13（390px）
-- iPhone 12/13 Pro Max（428px）
-- iPad（768px）
-- Desktop（1200px+）
+# 環境変数ファイルを作成
+cp env.template .env
 
-### ⚠️ 非推奨
-- 375px未満のデバイス（警告表示）
-
-## 🛠️ ファイル構成
-
-```
-📁AZVELIA/源/
-├── index.html          # メインHTML（13セクション）
-├── styles.css          # CSSトークン + スタイル定義
-├── script.js           # JavaScript（IntersectionObserver, Sticky CTA, etc.）
-├── README.md           # このファイル
-├── 源LP_README_DoD.txt # プロジェクト定義
-└── ...
+# .envファイルを編集してGA4測定IDを設定
+# GA4_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-## 🎯 主要機能
-
-### 1. IntersectionObserver
-- スクロール時のフェードイン効果
-- Sticky CTAの表示/非表示制御
-- 画像の遅延読み込み
-- CTA視認率の測定
-
-### 2. パフォーマンス測定
-- **CLS（Cumulative Layout Shift）**：レイアウトシフト測定
-- **LCP（Largest Contentful Paint）**：最大コンテンツ描画時間
-- **Navigation Timing API**：ページ読み込み時間
-
-### 3. CTAトラッキング
-- すべてのCTAボタンに`data-cta`属性
-- クリックイベントの追跡
-- GA4連携準備完了
-
-## 🔧 カスタマイズ方法
-
-### カラー変更
-```css
-/* styles.css の :root セクション */
---color-primary: #DD2C00;        /* お好みの色に変更 */
---color-primary-light: #F88C5E;  /* お好みの色に変更 */
+### 3. 開発サーバー起動
+```bash
+npm run dev
 ```
 
-### 余白調整
-```css
---spacing-md: 20px;  /* モバイル基本余白 */
---spacing-lg: 40px;  /* セクション余白 */
+ブラウザで http://localhost:8000 にアクセス
+
+### 4. ビルド
+```bash
+npm run build
 ```
 
-### フォント変更
-```css
---font-family: 'Noto Sans JP', sans-serif;  /* お好みのフォントに変更 */
+ビルド結果は `dist/` ディレクトリに出力されます。
+
+## 📁 ディレクトリ構成
+
+```
+源/
+├── index.html                      # メインHTML
+├── css/
+│   └── styles.css                  # スタイルシート
+├── js/
+│   ├── tracking.js                 # GA4イベントトラッキング（E3）
+│   └── main.js                     # メインJavaScript
+├── images/                         # 画像ファイル（E5担当）
+├── scripts/
+│   ├── build.js                    # ビルドスクリプト
+│   └── test-seo.js                 # SEOテストスクリプト
+├── docs/
+│   ├── SETUP.md                    # セットアップガイド
+│   ├── GA4_TRACKING_SPEC.md        # GA4イベント仕様書
+│   ├── PERFORMANCE_STRATEGY.md     # パフォーマンス戦略
+│   └── 源LP_README_DoD.txt         # プロジェクト全体DoD
+├── env.template                    # 環境変数テンプレート
+├── package.json                    # npm設定
+└── README.md                       # このファイル
 ```
 
-## 📈 次のステップ（E3〜E5連携）
+## 🔧 利用可能なコマンド
 
-### E3: Data & Tracking
-- [ ] GA4タグの設置
-- [ ] ヒートマップツール導入
-- [ ] A/Bテスト設定
+| コマンド | 説明 |
+|---------|------|
+| `npm run dev` | 開発サーバー起動（http://localhost:8000） |
+| `npm run build` | 本番用ビルド（dist/に出力） |
+| `npm run preview` | ビルド結果のプレビュー |
+| `npm run lighthouse` | Lighthouse監査実行 |
+| `npm run lighthouse:ci` | Lighthouse CI用（JSON出力） |
+| `npm run test:seo` | SEO基本チェック |
 
-### E4: Integrations
-- [ ] LINE連携（CTA→LINE遷移）
-- [ ] フォーム実装
-- [ ] Webhook設定
+## 📊 GA4イベント一覧
 
-### E5: Assets & Content
-- [ ] 画像の最適化（WebP変換）
-- [ ] OGP設定
-- [ ] Schema.orgマークアップ
+| イベント名 | トリガー条件 | 主要パラメータ |
+|-----------|-------------|---------------|
+| `view_section` | セクションが50%以上表示 | section_name, section_id |
+| `click_CTA` | CTAボタンクリック | cta_location, cta_text, cta_href |
+| `submit_order` | 予約フォーム送信 | reservation_date, guest_count, course_type |
+| `scroll_depth` | スクロール深度（25/50/75/100%） | depth_percent |
+| `web_vitals` | Web Vitals計測 | metric_name, metric_value, metric_rating |
 
-## 🐛 既知の問題
+詳細は [GA4_TRACKING_SPEC.md](./GA4_TRACKING_SPEC.md) を参照
 
-現時点で既知の問題はありません。
+## 🎨 主要機能
 
-## 📝 変更履歴
+### GA4トラッキング
+- ✅ 自動ページビュー計測
+- ✅ セクション表示トラッキング（Intersection Observer）
+- ✅ CTAクリックトラッキング（全CTAボタン対応）
+- ✅ フォーム送信トラッキング（PII除外）
+- ✅ スクロール深度計測（25/50/75/100%）
+- ✅ Web Vitals計測（LCP/FID/CLS）
 
-- **2025-10-14**: 初回実装完了
-  - 13セクション実装
-  - Sticky CTA実装
-  - IntersectionObserver実装
-  - CLS/LCP測定機能実装
+### SEO最適化
+- ✅ title/meta descriptionの最適化
+- ✅ h1タグの適切な使用
+- ✅ JSON-LD構造化データ（Restaurant/LocalBusiness）
+- ✅ OGP設定（Facebook/Twitter）
+- ✅ Viewport設定（モバイル対応）
 
-## 📞 お問い合わせ
+### パフォーマンス最適化
+- ✅ レスポンシブ画像（WebP + フォールバック）
+- ✅ 画像の遅延読み込み（loading="lazy"）
+- ✅ LCP要素の優先読み込み（fetchpriority="high"）
+- ✅ CSS/JSの非同期読み込み
+- ✅ Preconnect設定（GA4, Fonts）
 
-質問や問題がある場合は、プロジェクトチームまでお問い合わせください。
+## 🧪 テスト方法
+
+### 1. ローカル開発環境でのテスト
+```bash
+# 開発サーバー起動
+npm run dev
+
+# 別のターミナルでLighthouse実行
+npm run lighthouse
+```
+
+### 2. GA4イベント検証
+```bash
+# DebugViewを有効にしてアクセス
+http://localhost:8000/?debug_mode=true
+
+# Chrome DevToolsのコンソールで確認
+console.log(window.GA4_MEASUREMENT_ID);
+console.log(typeof gtag);  # 'function'であればOK
+```
+
+### 3. SEO検証
+```bash
+# SEO基本チェック
+npm run test:seo
+
+# Rich Results Test（オンライン）
+# https://search.google.com/test/rich-results にアクセスしてURLを入力
+```
+
+### 4. パフォーマンス検証
+- Lighthouse Performance: ≥90
+- LCP: <2.5s
+- CLS: <0.1
+- FID: <100ms
+
+詳細は [SETUP.md](./SETUP.md) を参照
+
+## 📈 KPI・目標値
+
+| 指標 | 目標値 | 現状 |
+|-----|--------|------|
+| **CVR** | ≥10% | - |
+| **Lighthouse Performance** | ≥90 | - |
+| **Lighthouse SEO** | ≥90 | - |
+| **LCP** | <2.5s | - |
+| **CLS** | <0.1 | - |
+
+## 🔗 関連ドキュメント
+
+| ドキュメント | 内容 |
+|------------|------|
+| [SETUP.md](./SETUP.md) | セットアップ詳細ガイド |
+| [GA4_TRACKING_SPEC.md](./GA4_TRACKING_SPEC.md) | GA4イベント仕様書 |
+| [PERFORMANCE_STRATEGY.md](./PERFORMANCE_STRATEGY.md) | パフォーマンス最適化戦略 |
+| [源LP_README_DoD.txt](./源LP_README_DoD.txt) | プロジェクト全体DoD |
+
+## 👥 チーム構成
+
+| 役割 | 担当領域 | DoD |
+|-----|---------|-----|
+| **E1** | Lead Architect / Infra | CI/CD、Vercelデプロイ、Lighthouse≥90 |
+| **E2** | Frontend UI | HTML/CSS/JS、CLS<0.1、モバイル対応 |
+| **E3** | Data & Tracking | GA4、SEO、A/B、構造化データ |
+| **E4** | Integrations | LINE連携、フォーム、Webhook |
+| **E5** | Assets & Content | 画像最適化、OGP、口コミ更新 |
+
+## 🚢 デプロイ
+
+### Vercelへのデプロイ（E1担当）
+
+1. Vercelプロジェクト作成
+2. 環境変数設定
+   - `GA4_MEASUREMENT_ID`: G-XXXXXXXXXX
+3. ビルドコマンド設定
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. デプロイ
+
+詳細は [SETUP.md](./SETUP.md) の「4. ビルド・デプロイ」を参照
+
+## 📞 サポート
+
+### 問い合わせ先
+- Slack: `#源lp-project`
+- E3（Data & Tracking）担当: [連絡先]
+
+### よくある質問
+**Q: GA4イベントが発火しない**  
+A: `.env`ファイルの`GA4_MEASUREMENT_ID`が正しく設定されているか確認してください。
+
+**Q: Lighthouseスコアが低い**  
+A: 画像の最適化（E5）とCSS最適化（E2）を確認してください。詳細は [PERFORMANCE_STRATEGY.md](./PERFORMANCE_STRATEGY.md) を参照。
+
+**Q: 構造化データのエラー**  
+A: [Rich Results Test](https://search.google.com/test/rich-results) でエラー内容を確認し、`index.html`のJSON-LD部分を修正してください。
+
+## 📝 ライセンス
+
+MIT License
 
 ---
 
-**E2: Frontend UI - 実装完了** ✅
+**プロジェクト:** 源LP  
+**担当:** E3 (Data & Tracking)  
+**バージョン:** 1.0.0  
+**最終更新:** 2025-10-14

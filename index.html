@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#2563eb">
   
   <!-- セキュリティ -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
   
-  <!-- SEO基本設定 -->
   <title>完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】</title>
   <meta name="description" content="鶴ヶ島の現場男子へ。手の届く最強、完全無欠の唐揚げ弁当を《500円・送料無料》でお届け。スマホ1つで今すぐLINE注文。">
-  <meta name="keywords" content="唐揚げ弁当,鶴ヶ島,配達,デリバリー,ワンコイン,500円,源,MINAMOTO,現場弁当,LINE注文">
   
   <!-- OGP設定 (1200×630px) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】">
   <meta property="og:description" content="鶴ヶ島の現場男子へ。手の届く最強、完全無欠の唐揚げ弁当を《500円・送料無料》でお届け。スマホ1つで今すぐ注文。">
-  <meta property="og:image" content="https://minamoto.example.com/images/ogp.jpg">
+  <meta property="og:image" content="https://minamoto.example.com/public/images/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、ワンコイン500円で配達">
@@ -29,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="完全無欠の唐揚げ弁当｜源 -MINAMOTO-【500円・送料無料】">
   <meta name="twitter:description" content="鶴ヶ島の現場男子へ。完全無欠の唐揚げ弁当を500円・送料無料で配達。今すぐスマホで注文。">
-  <meta name="twitter:image" content="https://minamoto.example.com/images/ogp.jpg">
+  <meta name="twitter:image" content="https://minamoto.example.com/public/images/ogp.jpg">
   <meta name="twitter:image:alt" content="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、ワンコイン500円で配達">
   
   <!-- Favicon -->
@@ -37,300 +34,418 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   
   <!-- Preload Critical Resources -->
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="/images/hero.webp" as="image" type="image/webp">
-  
-  <!-- DNS Prefetch for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
   
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   
-  <!-- JSON-LD構造化データ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "源 -MINAMOTO-",
-    "image": "https://minamoto.example.com/images/ogp.jpg",
-    "url": "https://minamoto.example.com/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "埼玉県",
-      "addressLocality": "鶴ヶ島市"
-    },
-    "servesCuisine": "Japanese",
-    "priceRange": "¥",
-    "areaServed": "鶴ヶ島市",
-    "description": "完全無欠の唐揚げ弁当を《500円・送料無料》で職場・現場へ配達。",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "弁当メニュー",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "完全無欠の唐揚げ弁当",
-            "description": "サクサクジューシーな黄金色の唐揚げ弁当",
-            "image": "https://minamoto.example.com/images/karaage-closeup.jpg"
-          },
-          "price": "500",
-          "priceCurrency": "JPY"
-        }
-      ]
-    }
-  }
-  </script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ヘッダー -->
-  <header id="header" class="header">
+  
+  <!-- ① ヘッダー（Header） -->
+  <header id="section-01" class="header fade-in">
     <div class="container">
-      <div class="logo">
-        <h1>源 -MINAMOTO-</h1>
+      <div class="header__content">
+        <div class="logo">
+          <h1>源LP</h1>
+        </div>
+        <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+          <a href="#section-02" class="nav__link">特徴</a>
+          <a href="#section-08" class="nav__link">料金</a>
+          <a href="#section-12" class="nav__link">お客様の声</a>
+        </nav>
       </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="#concept">こだわり</a></li>
-          <li><a href="#menu">メニュー</a></li>
-          <li><a href="#delivery">配達エリア</a></li>
-          <li><a href="#order">注文方法</a></li>
-        </ul>
-      </nav>
-      <a href="#cta" class="cta-button header-cta" data-cta-location="header">
-        今すぐ注文
-      </a>
     </div>
   </header>
 
-  <!-- 追従CTAボタン -->
-  <div id="sticky-cta" class="sticky-cta">
-    <a href="#cta" class="cta-button" data-cta-location="sticky">
-      LINEで注文する
-    </a>
-  </div>
-
-  <!-- ヒーロー -->
-  <section id="hero" class="hero section-trackable" data-section-name="hero">
-    <picture>
-      <source srcset="/images/placeholders/karaage-closeup.svg" type="image/svg+xml">
-      <img 
-        src="/images/placeholders/karaage-closeup.svg" 
-        alt="完全無欠の唐揚げ弁当 - サクサクジューシーな黄金色の唐揚げ、熱々できたてをお届け" 
-        class="hero-image"
-        width="1200"
-        height="800"
-        fetchpriority="high"
-        decoding="async"
-      >
-    </picture>
-    <div class="hero-content">
-      <h2 class="hero-title">完全無欠の唐揚げ弁当</h2>
-      <p class="hero-subtitle">鶴ヶ島の現場男子へ</p>
-      <p class="hero-price">ワンコイン<strong>500円</strong>・送料無料</p>
-      <a href="#cta" class="cta-button hero-cta" data-cta-location="hero">
-        今すぐLINEで注文
-      </a>
+  <!-- ② ヒーローセクション（Hero） -->
+  <section id="section-02" class="hero section fade-in">
+    <div class="container">
+      <div class="hero__content">
+        <h2 class="hero__title">あなたのビジネスを<br>次のステージへ</h2>
+        <p class="hero__description">モバイルファーストで設計された、最高のユーザー体験を提供します。</p>
+        <button class="btn btn--primary btn--large hero__cta" data-cta="hero">
+          <span>今すぐ始める</span>
+        </button>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-placeholder" role="img" aria-label="ヒーロー画像"></div>
+      </div>
     </div>
   </section>
 
-  <!-- こだわり -->
-  <section id="concept" class="concept section-trackable" data-section-name="concept">
+  <!-- ③ 問題提起（Problem） -->
+  <section id="section-03" class="section section--alt fade-in">
     <div class="container">
-      <h2 class="section-title">3つのこだわり</h2>
-      <div class="concept-grid">
-        <div class="concept-item">
-          <div class="concept-icon">🍗</div>
-          <h3>完全無欠の味</h3>
-          <p>サクサクジューシーな黄金色の唐揚げ。秘伝のタレで下味をつけ、二度揚げで外はカリッと中はジューシーに。</p>
+      <h2 class="section__title">こんなお悩みありませんか？</h2>
+      <div class="problem-list">
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
+          <h3 class="card__title">モバイル対応が不十分</h3>
+          <p class="card__text">スマートフォンでの表示が崩れて、ユーザーが離脱してしまう</p>
         </div>
-        <div class="concept-item">
-          <div class="concept-icon">💰</div>
-          <h3>ワンコイン500円</h3>
-          <p>手の届く最強。送料無料で職場・現場へお届け。毎日でも気軽に注文できる価格設定。</p>
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
+          <h3 class="card__title">読み込みが遅い</h3>
+          <p class="card__text">ページの表示に時間がかかり、ユーザーの離脱率が高い</p>
         </div>
-        <div class="concept-item">
-          <div class="concept-icon">📱</div>
-          <h3>スマホで簡単</h3>
-          <p>LINEで今すぐ注文。わずか3タップで完了。注文から最短30分でお届けします。</p>
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="問題アイコン">❌</span>
+          <h3 class="card__title">CVRが低い</h3>
+          <p class="card__text">訪問者は多いのに、なかなかコンバージョンに繋がらない</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- メニュー -->
-  <section id="menu" class="menu section-trackable" data-section-name="menu">
+  <!-- ④ ソリューション（Solution） -->
+  <section id="section-04" class="section fade-in">
     <div class="container">
-      <h2 class="section-title">メニュー</h2>
-      <div class="menu-item-detail">
-        <div class="menu-image">
-          <picture>
-            <source srcset="/images/placeholders/karaage-closeup.svg" type="image/svg+xml">
-            <img 
-              src="/images/placeholders/karaage-closeup.svg" 
-              alt="完全無欠の唐揚げ弁当 - ボリューム満点、ジューシーな唐揚げ6個とご飯、漬物のセット" 
-              loading="lazy"
-              width="600"
-              height="400"
-              decoding="async"
-            >
-          </picture>
+      <h2 class="section__title">源LPが解決します</h2>
+      <p class="section__description">最新のモバイルファースト設計で、すべての課題を解決します。</p>
+      <div class="solution-grid card-grid card-grid--3">
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="レスポンシブアイコン">📱</span>
+          <h3 class="card__title">完全レスポンシブ</h3>
+          <p class="card__text">375px以上のあらゆるデバイスで完璧に表示されます。</p>
         </div>
-        <div class="menu-details">
-          <h3>完全無欠の唐揚げ弁当</h3>
-          <p class="menu-price"><strong>500円</strong>（税込・送料無料）</p>
-          <ul class="menu-features">
-            <li>✓ ジューシーな唐揚げ×6個</li>
-            <li>✓ 炊きたてご飯（大盛り無料）</li>
-            <li>✓ 自家製漬物</li>
-            <li>✓ ボリューム満点</li>
-          </ul>
-          <a href="#cta" class="cta-button" data-cta-location="menu">
-            この弁当を注文する
-          </a>
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="高速アイコン">⚡</span>
+          <h3 class="card__title">高速表示</h3>
+          <p class="card__text">LCP 2.5秒以下を実現し、ユーザーを待たせません。</p>
+        </div>
+        <div class="card">
+          <span class="card__icon" role="img" aria-label="CVRアイコン">📈</span>
+          <h3 class="card__title">CVR 10%以上</h3>
+          <p class="card__text">最適化されたUIでコンバージョン率を最大化します。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 配達エリア -->
-  <section id="delivery" class="delivery section-trackable" data-section-name="delivery">
+  <!-- ⑤ 特徴1（Feature 1） -->
+  <section id="section-05" class="feature section section--alt fade-in">
     <div class="container">
-      <h2 class="section-title">配達エリア</h2>
-      <div class="delivery-content">
-        <div class="delivery-info">
-          <h3>鶴ヶ島市内の職場・現場へ配達</h3>
-          <p class="delivery-description">配達時間：11:00〜13:00（平日のみ）<br>最短30分でお届けします。</p>
-          <ul class="delivery-features">
-            <li>✓ 送料無料</li>
-            <li>✓ 最短30分配達</li>
-            <li>✓ 職場・現場OK</li>
-            <li>✓ 時間指定可能</li>
+      <div class="feature__content">
+        <div class="feature__text">
+          <h2 class="feature__title">モバイル先行設計</h2>
+          <p class="feature__description">スマートフォンユーザーを第一に考えた設計で、40px/20pxの最適な余白を実現。快適な操作性を提供します。</p>
+          <ul class="feature__list">
+            <li>タッチ操作に最適化されたUI</li>
+            <li>視認性の高いフォントサイズ</li>
+            <li>指でタップしやすいボタンサイズ</li>
           </ul>
         </div>
-        <div class="delivery-map">
-          <picture>
-            <source srcset="/images/placeholders/map.svg" type="image/svg+xml">
-            <img 
-              src="/images/placeholders/map.svg" 
-              alt="配達対応エリアマップ - 鶴ヶ島市内全域、主要な職場・建設現場へ配達可能" 
-              loading="lazy"
-              width="800"
-              height="600"
-              decoding="async"
-            >
-          </picture>
+        <div class="feature__image">
+          <div class="feature__image-placeholder" role="img" aria-label="モバイル先行設計イメージ"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LINE注文方法 -->
-  <section id="order" class="order section-trackable" data-section-name="order">
+  <!-- ⑥ 特徴2（Feature 2） -->
+  <section id="section-06" class="feature section fade-in">
     <div class="container">
-      <h2 class="section-title">LINEで簡単3ステップ</h2>
-      <div class="order-content">
-        <div class="order-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>友だち追加</h3>
-            <p>源の公式LINEを追加</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>注文情報を送信</h3>
-            <p>個数・配達先・時間を選択</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>配達完了</h3>
-            <p>最短30分でお届け</p>
-          </div>
+      <div class="feature__content feature__content--reverse">
+        <div class="feature__text">
+          <h2 class="feature__title">高速パフォーマンス</h2>
+          <p class="feature__description">CLS<0.1を実現し、レイアウトシフトを最小限に抑えます。ユーザーにストレスを与えません。</p>
+          <ul class="feature__list">
+            <li>画像の遅延読み込み対応</li>
+            <li>最適化されたCSSとJavaScript</li>
+            <li>WebP形式の軽量画像</li>
+          </ul>
         </div>
-        <div class="order-image">
-          <picture>
-            <source srcset="/images/placeholders/line-order.svg" type="image/svg+xml">
-            <img 
-              src="/images/placeholders/line-order.svg" 
-              alt="LINEでの注文フロー画面 - チャット形式で個数・配達先・時間を選択して簡単注文、わずか3ステップで完了" 
-              loading="lazy"
-              width="400"
-              height="800"
-              decoding="async"
-            >
-          </picture>
+        <div class="feature__image">
+          <div class="feature__image-placeholder" role="img" aria-label="高速パフォーマンスイメージ"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="cta" class="cta-section section-trackable" data-section-name="cta">
+  <!-- ⑦ 特徴3（Feature 3） -->
+  <section id="section-07" class="feature section section--alt fade-in">
     <div class="container">
-      <h2 class="cta-title">今すぐ注文する</h2>
-      <p class="cta-description">LINEで簡単注文。最短30分でお届けします。</p>
-      <a href="https://line.me/R/ti/p/@minamoto" class="cta-button cta-button-large" data-cta-location="main-cta">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"></path>
-        </svg>
-        LINEで今すぐ注文
-      </a>
-      <div class="cta-note">
-        <p>※配達時間：11:00〜13:00（平日のみ）</p>
-        <p>※鶴ヶ島市内限定・送料無料</p>
+      <div class="feature__content">
+        <div class="feature__text">
+          <h2 class="feature__title">Sticky CTA</h2>
+          <p class="feature__description">画面に常に表示される追従型CTAで、視認率95%以上を達成。いつでもアクションを促します。</p>
+          <ul class="feature__list">
+            <li>スクロール時も常に表示</li>
+            <li>目立つデザインで高いクリック率</li>
+            <li>コンバージョンを最大化</li>
+          </ul>
+        </div>
+        <div class="feature__image">
+          <div class="feature__image-placeholder" role="img" aria-label="Sticky CTAイメージ"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- フッター -->
-  <footer class="footer">
+  <!-- ⑧ 料金（Pricing） -->
+  <section id="section-08" class="pricing section section--alt fade-in">
+    <div class="container">
+      <h2 class="section__title">シンプルな料金プラン</h2>
+      <p class="section__description">明確で分かりやすい料金体系</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-name">スタンダード</h3>
+            <div class="pricing-price">
+              <span class="pricing-amount">¥9,800</span>
+              <span class="pricing-period">/月</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ モバイル最適化</li>
+            <li>✓ 基本アナリティクス</li>
+            <li>✓ メールサポート</li>
+            <li>✓ 月次レポート</li>
+          </ul>
+          <button class="btn btn--secondary" data-cta="pricing-standard">
+            <span>選択する</span>
+          </button>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-badge">人気</div>
+          <div class="pricing-header">
+            <h3 class="pricing-name">プレミアム</h3>
+            <div class="pricing-price">
+              <span class="pricing-amount">¥19,800</span>
+              <span class="pricing-period">/月</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ すべてのスタンダード機能</li>
+            <li>✓ A/Bテスト</li>
+            <li>✓ 優先サポート</li>
+            <li>✓ 週次レポート</li>
+            <li>✓ カスタマイズ対応</li>
+          </ul>
+          <button class="btn btn--primary" data-cta="pricing-premium">
+            <span>選択する</span>
+          </button>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-name">エンタープライズ</h3>
+            <div class="pricing-price">
+              <span class="pricing-amount">お問い合わせ</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ すべてのプレミアム機能</li>
+            <li>✓ 専任担当者</li>
+            <li>✓ 24/7サポート</li>
+            <li>✓ カスタム開発</li>
+            <li>✓ SLA保証</li>
+          </ul>
+          <button class="btn btn--secondary" data-cta="pricing-enterprise">
+            <span>お問い合わせ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ フロー（Flow） -->
+  <section id="section-09" class="section fade-in">
+    <div class="container">
+      <h2 class="section__title">ご利用の流れ</h2>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-number" aria-label="ステップ1">01</div>
+          <h3 class="flow-step-title">お問い合わせ</h3>
+          <p class="flow-step-text">まずはお気軽にお問い合わせください。ご要望をお伺いします。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number" aria-label="ステップ2">02</div>
+          <h3 class="flow-step-title">ヒアリング</h3>
+          <p class="flow-step-text">貴社のビジネスや課題について詳しくヒアリングします。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number" aria-label="ステップ3">03</div>
+          <h3 class="flow-step-title">ご提案</h3>
+          <p class="flow-step-text">最適なプランとソリューションをご提案いたします。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number" aria-label="ステップ4">04</div>
+          <h3 class="flow-step-title">導入開始</h3>
+          <p class="flow-step-text">スムーズに導入を開始し、すぐに効果を実感いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑩ FAQ -->
+  <section id="section-10" class="faq section section--alt fade-in">
+    <div class="container">
+      <h2 class="section__title">よくある質問</h2>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>導入までにどのくらいの期間がかかりますか？</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" aria-hidden="true">
+            <div class="faq__answer-content">
+              <p>通常、お申し込みから1週間程度で導入が完了します。お急ぎの場合はご相談ください。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>最低利用期間はありますか？</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" aria-hidden="true">
+            <div class="faq__answer-content">
+              <p>最低3ヶ月からのご利用となります。その後は月単位で継続・解約が可能です。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>サポート体制はどうなっていますか？</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" aria-hidden="true">
+            <div class="faq__answer-content">
+              <p>プランに応じて、メール・チャット・電話でのサポートを提供しています。プレミアム以上では優先サポートが受けられます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>デザインのカスタマイズは可能ですか？</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" aria-hidden="true">
+            <div class="faq__answer-content">
+              <p>はい、プレミアムプラン以上でカスタマイズ対応が可能です。貴社のブランドに合わせたデザインを実現します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑪ CTA（Call to Action） -->
+  <section id="section-11" class="cta section fade-in">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">今すぐ始めて、<br>ビジネスを加速させましょう</h2>
+        <p class="cta-description">無料トライアルで、まずは効果を実感してください。</p>
+        <button class="btn btn--primary btn--large" data-cta="main-cta">
+          <span>無料で始める</span>
+        </button>
+        <p class="cta-note">※クレジットカード不要・初期費用0円</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑫ お客様の声（Testimonials） -->
+  <section id="section-12" class="section section--alt fade-in">
+    <div class="container">
+      <h2 class="section__title">お客様の声</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating" aria-label="評価：5つ星">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">「モバイルでの表示が劇的に改善され、CVRが2倍になりました！」</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" role="img" aria-label="お客様のアバター"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">田中 太郎様</div>
+              <div class="testimonial-company">株式会社A / 代表取締役</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating" aria-label="評価：5つ星">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">「ページの読み込みが速くなり、離脱率が大幅に減少しました。」</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" role="img" aria-label="お客様のアバター"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">佐藤 花子様</div>
+              <div class="testimonial-company">B株式会社 / マーケティング部長</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating" aria-label="評価：5つ星">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">「サポートが手厚く、導入もスムーズでした。大変満足しています。」</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" role="img" aria-label="お客様のアバター"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">鈴木 一郎様</div>
+              <div class="testimonial-company">C社 / EC事業責任者</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑬ フッター（Footer） -->
+  <footer id="section-13" class="footer fade-in">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-info">
-          <h3>源 -MINAMOTO-</h3>
-          <p>完全無欠の唐揚げ弁当を500円でお届け</p>
+        <div class="footer-section">
+          <h3 class="footer-title">源LP</h3>
+          <p class="footer-text">モバイルファーストで設計された、最高のランディングページ体験を。</p>
         </div>
-        <div class="footer-links">
-          <h4>リンク</h4>
-          <ul>
-            <li><a href="#concept">こだわり</a></li>
-            <li><a href="#menu">メニュー</a></li>
-            <li><a href="#delivery">配達エリア</a></li>
-            <li><a href="#order">注文方法</a></li>
+        <div class="footer-section">
+          <h4 class="footer-heading">サービス</h4>
+          <ul class="footer-links">
+            <li><a href="#section-02">特徴</a></li>
+            <li><a href="#section-08">料金</a></li>
+            <li><a href="#section-09">ご利用の流れ</a></li>
+            <li><a href="#section-10">よくある質問</a></li>
           </ul>
         </div>
-        <div class="footer-legal">
-          <h4>法務</h4>
-          <ul>
-            <li><a href="/privacy">プライバシーポリシー</a></li>
-            <li><a href="/terms">利用規約</a></li>
-            <li><a href="/tokushoho">特定商取引法</a></li>
+        <div class="footer-section">
+          <h4 class="footer-heading">企業情報</h4>
+          <ul class="footer-links">
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">採用情報</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-heading">法的情報</h4>
+          <ul class="footer-links">
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">特定商取引法</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-copyright">
-        <p>&copy; 2025 源 -MINAMOTO-. All Rights Reserved.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 源LP. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky CTA -->
+  <div id="sticky-cta" class="sticky-cta">
+    <div class="sticky-cta__content">
+      <div class="sticky-cta__text">
+        <span class="sticky-cta__title">今すぐ始める</span>
+        <span class="sticky-cta__subtitle">無料トライアル実施中</span>
+      </div>
+      <button class="btn btn--primary btn--small" data-cta="sticky-cta">
+        <span>申し込む</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="main.js" defer></script>
-  
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      'send_page_view': true,
-      'cookie_flags': 'SameSite=None;Secure'
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

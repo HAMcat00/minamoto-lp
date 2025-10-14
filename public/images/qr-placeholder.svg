@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" width="250" height="250">
+  <defs>
+    <style>
+      .qr-bg { fill: #ffffff; }
+      .qr-fg { fill: #000000; }
+      .qr-placeholder-text { fill: #666666; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; text-anchor: middle; }
+      .qr-icon { fill: #06C755; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect class="qr-bg" width="250" height="250" rx="8"/>
+  
+  <!-- 枠線 -->
+  <rect x="2" y="2" width="246" height="246" rx="6" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <!-- QRコード風のグリッドパターン -->
+  <!-- 左上コーナー -->
+  <rect class="qr-fg" x="20" y="20" width="50" height="50" rx="2"/>
+  <rect class="qr-bg" x="27" y="27" width="36" height="36" rx="2"/>
+  <rect class="qr-fg" x="34" y="34" width="22" height="22" rx="1"/>
+  
+  <!-- 右上コーナー -->
+  <rect class="qr-fg" x="180" y="20" width="50" height="50" rx="2"/>
+  <rect class="qr-bg" x="187" y="27" width="36" height="36" rx="2"/>
+  <rect class="qr-fg" x="194" y="34" width="22" height="22" rx="1"/>
+  
+  <!-- 左下コーナー -->
+  <rect class="qr-fg" x="20" y="180" width="50" height="50" rx="2"/>
+  <rect class="qr-bg" x="27" y="187" width="36" height="36" rx="2"/>
+  <rect class="qr-fg" x="34" y="194" width="22" height="22" rx="1"/>
+  
+  <!-- ランダムなドットパターン（QRコード風） -->
+  <rect class="qr-fg" x="80" y="25" width="8" height="8"/>
+  <rect class="qr-fg" x="90" y="25" width="8" height="8"/>
+  <rect class="qr-fg" x="110" y="25" width="8" height="8"/>
+  <rect class="qr-fg" x="130" y="25" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="25" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="25" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="80" y="40" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="40" width="8" height="8"/>
+  <rect class="qr-fg" x="120" y="40" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="40" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="40" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="25" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="25" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="25" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="25" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="25" y="160" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="40" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="40" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="40" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="40" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="40" y="160" width="8" height="8"/>
+  
+  <!-- 中央領域のパターン -->
+  <rect class="qr-fg" x="80" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="120" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="80" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="90" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="110" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="130" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="150" y="100" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="80" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="120" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="90" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="110" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="130" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="150" y="140" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="80" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="120" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="160" width="8" height="8"/>
+  
+  <!-- 右側パターン -->
+  <rect class="qr-fg" x="185" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="195" y="80" width="8" height="8"/>
+  <rect class="qr-fg" x="215" y="80" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="185" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="205" y="100" width="8" height="8"/>
+  <rect class="qr-fg" x="225" y="100" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="185" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="195" y="120" width="8" height="8"/>
+  <rect class="qr-fg" x="215" y="120" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="185" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="205" y="140" width="8" height="8"/>
+  <rect class="qr-fg" x="225" y="140" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="185" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="195" y="160" width="8" height="8"/>
+  <rect class="qr-fg" x="215" y="160" width="8" height="8"/>
+  
+  <!-- 下部パターン -->
+  <rect class="qr-fg" x="80" y="185" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="185" width="8" height="8"/>
+  <rect class="qr-fg" x="120" y="185" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="185" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="185" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="90" y="205" width="8" height="8"/>
+  <rect class="qr-fg" x="110" y="205" width="8" height="8"/>
+  <rect class="qr-fg" x="130" y="205" width="8" height="8"/>
+  <rect class="qr-fg" x="150" y="205" width="8" height="8"/>
+  
+  <rect class="qr-fg" x="80" y="225" width="8" height="8"/>
+  <rect class="qr-fg" x="100" y="225" width="8" height="8"/>
+  <rect class="qr-fg" x="120" y="225" width="8" height="8"/>
+  <rect class="qr-fg" x="140" y="225" width="8" height="8"/>
+  <rect class="qr-fg" x="160" y="225" width="8" height="8"/>
+  
+  <!-- 中央にLINEアイコン風の装飾 -->
+  <circle class="qr-icon" cx="125" cy="115" r="18"/>
+  <text x="125" y="122" class="qr-placeholder-text" style="fill: white; font-size: 24px; font-weight: bold;">L</text>
+  
+  <!-- プレースホルダーテキスト -->
+  <text x="125" y="245" class="qr-placeholder-text">QRコードプレースホルダー</text>
+</svg>
+

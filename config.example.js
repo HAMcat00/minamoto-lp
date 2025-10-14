@@ -14,8 +14,10 @@ const CONFIG = {
    * 形式: https://line.me/R/ti/p/@YOUR_LINE_ID
    * 
    * 例: https://line.me/R/ti/p/@123abcde
+   * 
+   * 【重要】本番環境では必ず実際のLINE IDに置き換えてください
    */
-  lineUrl: 'https://line.me/R/ti/p/@YOUR_LINE_ID',
+  lineUrl: 'https://line.me/R/ti/p/@azvelia',
   
   /**
    * LINE Messaging API設定（Webhook実装時に使用）
@@ -30,11 +32,17 @@ const CONFIG = {
   /**
    * UTMパラメータ（GA4連携用）
    * 各値はGA4でキャンペーン分析に使用されます
+   * 
+   * utm_content は自動的に設定されます:
+   * - hero: ヒーローセクションCTA
+   * - qr-modal: QRモーダル内CTA
+   * - sticky: 追従CTA
    */
   tracking: {
-    utm_source: 'azvelia_lp',        // 流入元
-    utm_medium: 'web',                // メディア
-    utm_campaign: 'order_2025_q4'    // キャンペーン名
+    utm_source: 'azvelia_lp',        // 流入元: LPサイト
+    utm_medium: 'web',                // メディア: Web
+    utm_campaign: 'order_2025_q4',   // キャンペーン: 2025年Q4
+    utm_term: ''                      // キーワード（オプション）
   },
   
   // ==================== QRコード設定 ====================
