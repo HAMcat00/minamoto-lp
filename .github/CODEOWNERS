@@ -1,0 +1,28 @@
+# CODEOWNERS - Code Review Assignment
+# This file defines who is responsible for code review in this repository
+# E1 (Lead Architect/Infra) is required for all changes
+
+# Default: All files require E1 review
+* @E1
+
+# Infrastructure and configuration files
+/.github/ @E1
+/vercel.json @E1
+/.gitignore @E1
+
+# HTML structure
+/index.html @E1 @FrontendDev
+
+# Styles
+/style.css @E1 @Designer
+
+# JavaScript
+/main.js @E1 @FrontendDev
+
+# Images and assets
+/public/ @E1 @Designer
+
+# Documentation
+/docs/ @E1
+/README.md @E1
+

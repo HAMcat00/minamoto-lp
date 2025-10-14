@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO基本設定 -->
+  <title>源（MINAMOTO）- 本格和食料理店 | 京都四条</title>
+  <meta name="description" content="京都四条にある本格和食料理店「源」。季節の食材を使った伝統的な日本料理をご提供。個室完備、接待・記念日に最適。ご予約はLINEで簡単に。">
+  <meta name="keywords" content="和食,京都,四条,料理店,源,日本料理,個室,接待,記念日">
+  
+  <!-- OGP設定 -->
+  <meta property="og:title" content="源（MINAMOTO）- 本格和食料理店 | 京都四条">
+  <meta property="og:description" content="京都四条にある本格和食料理店「源」。季節の食材を使った伝統的な日本料理をご提供。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minamoto-kyoto.jp">
+  <meta property="og:image" content="https://minamoto-kyoto.jp/images/og-image.jpg">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="源（MINAMOTO）- 本格和食料理店 | 京都四条">
+  <meta name="twitter:description" content="京都四条にある本格和食料理店「源」。季節の食材を使った伝統的な日本料理をご提供。">
+  <meta name="twitter:image" content="https://minamoto-kyoto.jp/images/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
+  <!-- Google Analytics 4 -->
+  <script>
+    // GA4測定IDを環境変数から取得（build時に置換）
+    window.GA4_MEASUREMENT_ID = '__GA4_MEASUREMENT_ID__';
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=__GA4_MEASUREMENT_ID__"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', window.GA4_MEASUREMENT_ID, {
+      'send_page_view': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
+  
+  <!-- JSON-LD構造化データ（LocalBusiness） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "源（MINAMOTO）",
+    "image": "https://minamoto-kyoto.jp/images/restaurant-exterior.jpg",
+    "@id": "https://minamoto-kyoto.jp",
+    "url": "https://minamoto-kyoto.jp",
+    "telephone": "+81-75-123-4567",
+    "priceRange": "¥¥¥",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "四条通烏丸東入ル",
+      "addressLocality": "京都市下京区",
+      "postalCode": "600-8005",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.0042,
+      "longitude": 135.7584
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "11:30",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "17:00",
+        "closes": "22:00"
+      }
+    ],
+    "servesCuisine": "Japanese",
+    "acceptsReservations": "True",
+    "menu": "https://minamoto-kyoto.jp/menu",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  
+  <!-- ヘッダー -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>源（MINAMOTO）</h1>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#about">お店について</a></li>
+          <li><a href="#menu">お品書き</a></li>
+          <li><a href="#reviews">お客様の声</a></li>
+          <li><a href="#access">アクセス</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="cta-button header-cta" data-cta-location="header">
+        LINE予約
+      </a>
+    </div>
+  </header>
+
+  <!-- 追従CTAボタン -->
+  <div id="sticky-cta" class="sticky-cta">
+    <a href="#" class="cta-button" data-cta-location="sticky">
+      今すぐLINE予約
+    </a>
+  </div>
+
+  <!-- メインビジュアル -->
+  <section id="hero" class="hero section-trackable" data-section-name="hero">
+    <picture>
+      <source srcset="/images/hero-1920.webp" media="(min-width: 1200px)" type="image/webp">
+      <source srcset="/images/hero-1200.webp" media="(min-width: 768px)" type="image/webp">
+      <source srcset="/images/hero-768.webp" media="(min-width: 375px)" type="image/webp">
+      <img 
+        src="/images/hero-768.jpg" 
+        alt="源の料理" 
+        class="hero-image"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
+    <div class="hero-content">
+      <h2 class="hero-title">京都四条で味わう<br>本格和食の粋</h2>
+      <p class="hero-description">季節の食材を使った伝統的な日本料理</p>
+      <a href="#" class="cta-button hero-cta" data-cta-location="hero">
+        LINE予約はこちら
+      </a>
+    </div>
+  </section>
+
+  <!-- お店について -->
+  <section id="about" class="about section-trackable" data-section-name="about">
+    <div class="container">
+      <h2 class="section-title">お店について</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>京都四条に店を構える「源」は、旬の食材を活かした本格和食料理店です。</p>
+          <p>熟練の料理人が丹精込めて作り上げる季節の料理をお楽しみいただけます。</p>
+          <p>個室もご用意しておりますので、接待や記念日のお食事に最適です。</p>
+        </div>
+        <div class="about-image">
+          <img 
+            src="/images/about-placeholder.jpg" 
+            alt="店内の様子" 
+            loading="lazy"
+            width="600"
+            height="400"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お品書き -->
+  <section id="menu" class="menu section-trackable" data-section-name="menu">
+    <div class="container">
+      <h2 class="section-title">お品書き</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="/images/menu-1-placeholder.jpg" alt="懐石コース" loading="lazy" width="400" height="300">
+          <h3>懐石コース</h3>
+          <p class="price">¥8,000〜</p>
+          <p>季節の食材を使った本格懐石料理</p>
+        </div>
+        <div class="menu-item">
+          <img src="/images/menu-2-placeholder.jpg" alt="会席コース" loading="lazy" width="400" height="300">
+          <h3>会席コース</h3>
+          <p class="price">¥12,000〜</p>
+          <p>特別な日のための贅沢なコース</p>
+        </div>
+        <div class="menu-item">
+          <img src="/images/menu-3-placeholder.jpg" alt="おまかせコース" loading="lazy" width="400" height="300">
+          <h3>おまかせコース</h3>
+          <p class="price">¥15,000〜</p>
+          <p>料理長が選ぶ最高の食材で</p>
+        </div>
+      </div>
+      <div class="menu-cta">
+        <a href="#" class="cta-button" data-cta-location="menu">
+          コースを予約する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section id="reviews" class="reviews section-trackable" data-section-name="reviews">
+    <div class="container">
+      <h2 class="section-title">お客様の声</h2>
+      <div class="reviews-grid">
+        <div class="review-item">
+          <div class="review-rating">★★★★★</div>
+          <p class="review-text">「料理も雰囲気も最高でした。特別な記念日にぴったりのお店です。」</p>
+          <p class="review-author">— 田中様（40代・女性）</p>
+        </div>
+        <div class="review-item">
+          <div class="review-rating">★★★★★</div>
+          <p class="review-text">「接待で利用しましたが、取引先にも大変喜んでいただけました。」</p>
+          <p class="review-author">— 佐藤様（50代・男性）</p>
+        </div>
+        <div class="review-item">
+          <div class="review-rating">★★★★★</div>
+          <p class="review-text">「季節ごとに変わるメニューが楽しみで、何度も訪れています。」</p>
+          <p class="review-author">— 鈴木様（30代・女性）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section id="access" class="access section-trackable" data-section-name="access">
+    <div class="container">
+      <h2 class="section-title">アクセス</h2>
+      <div class="access-content">
+        <div class="access-info">
+          <h3>店舗情報</h3>
+          <dl>
+            <dt>住所</dt>
+            <dd>〒600-8005 京都市下京区四条通烏丸東入ル</dd>
+            <dt>電話</dt>
+            <dd>075-123-4567</dd>
+            <dt>営業時間</dt>
+            <dd>
+              昼：11:30〜14:00（平日のみ）<br>
+              夜：17:00〜22:00（L.O. 21:00）
+            </dd>
+            <dt>定休日</dt>
+            <dd>水曜日</dd>
+            <dt>アクセス</dt>
+            <dd>地下鉄四条駅より徒歩3分<br>阪急烏丸駅より徒歩5分</dd>
+          </dl>
+        </div>
+        <div class="access-map">
+          <div id="map" style="width: 100%; height: 400px; background: #eee;">
+            <!-- Google Maps埋め込み予定 -->
+            <p style="text-align: center; padding-top: 180px;">地図を表示</p>
+          </div>
+        </div>
+      </div>
+      <div class="access-cta">
+        <a href="#" class="cta-button" data-cta-location="access">
+          今すぐ予約する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 源（MINAMOTO）. All Rights Reserved.</p>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- 予約モーダル -->
+  <div id="reservation-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>ご予約フォーム</h2>
+      <form id="reservation-form" class="reservation-form">
+        <div class="form-group">
+          <label for="name">お名前 <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号 <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="date">ご予約日 <span class="required">*</span></label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">ご予約時間 <span class="required">*</span></label>
+          <select id="time" name="time" required>
+            <option value="">選択してください</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guests">人数 <span class="required">*</span></label>
+          <select id="guests" name="guests" required>
+            <option value="">選択してください</option>
+            <option value="1">1名</option>
+            <option value="2">2名</option>
+            <option value="3">3名</option>
+            <option value="4">4名</option>
+            <option value="5">5名</option>
+            <option value="6">6名以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="course">コース</label>
+          <select id="course" name="course">
+            <option value="">選択してください</option>
+            <option value="kaiseki">懐石コース（¥8,000〜）</option>
+            <option value="kaiseki-premium">会席コース（¥12,000〜）</option>
+            <option value="omakase">おまかせコース（¥15,000〜）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">ご要望・アレルギー等</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="cta-button">予約を確定する</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- GA4イベントトラッキングスクリプト -->
+  <script src="/js/tracking.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
