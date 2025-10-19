@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "node scripts/vercel-build.js",
-  "outputDirectory": "dist",
-  "installCommand": "npm install",
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "",
   "headers": [
     {
       "source": "/(.*)",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "source": "/style.css",
+      "source": "/styles.css",
       "headers": [
         {
           "key": "Cache-Control",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "source": "/main.js",
+      "source": "/js/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
