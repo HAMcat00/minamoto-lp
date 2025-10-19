@@ -620,6 +620,21 @@
     </div>
   </div>
 
+  <!-- Vercel Speed Insights -->
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/@vercel/speed-insights@1.0.0/dist/index.js';
+      script.async = true;
+      script.onload = function() {
+        if (window.speedInsights) {
+          window.speedInsights();
+        }
+      };
+      document.head.appendChild(script);
+    })();
+  </script>
+
   <!-- Scripts -->
   <script src="main.js"></script>
   <script src="script.js"></script>
